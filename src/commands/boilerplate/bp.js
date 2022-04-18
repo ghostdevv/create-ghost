@@ -1,8 +1,8 @@
+import { existsSync, readdirSync, mkdirSync, copyFileSync } from 'fs';
 import { onCancel } from '../../utils/prompts.js';
-import { existsSync, readdirSync } from 'fs';
+import { dirname, join, resolve } from 'path';
 import { join as desmJoin } from 'desm';
 import logSymbols from 'log-symbols';
-import { join, resolve } from 'path';
 import prompts from 'prompts';
 import kleur from 'kleur';
 import cpy from 'cpy';
@@ -73,7 +73,8 @@ export const run = async (args) => {
 
         if (existsSync(out) && !args.force) await checkForce(item.file);
 
-        await cpy(file, out);
+        mkdirSync(dirname(out), { recursive: true });
+        copyFileSync(file, out);
     } else {
         const dir = join(item.path, item.dir);
         const out = resolve(item.out);
