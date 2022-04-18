@@ -21,6 +21,8 @@
     "url": "https://github.com/ghostdevv/create-ghost/issues"
   },
   "dependencies": {
+    "cpy": "^9.0.1",
+    "desm": "^1.2.0",
     "kleur": "^4.1.4",
     "log-symbols": "^5.1.0",
     "minimist": "^1.2.5",

@@ -1,7 +1,11 @@
 import logSymbols from 'log-symbols';
 import k from 'kleur';
 
-const commands = {};
+import * as bp from './commands/boilerplate/bp.js';
+
+const commands = {
+    bp,
+};
 
 export const createHelpText = () => `  npm init ghost <command>
   
