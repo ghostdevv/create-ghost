@@ -1,11 +1,7 @@
 import logSymbols from 'log-symbols';
 import k from 'kleur';
 
-import * as test from './commands/test.js';
-
-const commands = {
-    test,
-};
+const commands = {};
 
 export const createHelpText = () => `  npm init ghost <command>
   
@@ -30,13 +26,12 @@ export const run = async ({ args }) => {
 
     const command = commands[commandName];
 
-    if (!command) {
+    if (!command)
         return console.log(
             ' ',
             logSymbols.error,
             k.red(`Command "${k.bold(commandName)}" not found`),
         );
-    }
 
     await command.run(args);
 };
