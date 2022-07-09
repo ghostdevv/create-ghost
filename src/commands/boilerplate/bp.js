@@ -53,37 +53,39 @@ export const run = async (args) => {
         });
     }
 
-    const { itemDir } = await prompts(
+    const { itemDirs } = await prompts(
         {
-            type: 'select',
+            type: 'multiselect',
             message: 'Select an bp item',
-            name: 'itemDir',
+            name: 'itemDirs',
             choices,
         },
         { onCancel },
     );
 
-    console.log();
+    for (const dir of itemDirs) {
+        console.log();
 
-    const item = items.get(itemDir);
+        const item = items.get(dir);
 
-    if (item.file) {
-        const file = join(item.path, item.file);
-        const out = resolve(item.out);
+        if (item.file) {
+            const file = join(item.path, item.file);
+            const out = resolve(item.out);
 
-        if (existsSync(out) && !args.force) await checkForce(item.file);
+            if (existsSync(out) && !args.force) await checkForce(item.file);
 
-        mkdirSync(dirname(out), { recursive: true });
-        copyFileSync(file, out);
-    } else {
-        const dir = join(item.path, item.dir);
-        const out = resolve(item.out);
+            mkdirSync(dirname(out), { recursive: true });
+            copyFileSync(file, out);
+        } else {
+            const dir = join(item.path, item.dir);
+            const out = resolve(item.out);
 
-        const exists = existsSync(out);
+            const exists = existsSync(out);
 
-        if (exists && !args.force) await checkForce(item.out, true);
+            if (exists && !args.force) await checkForce(item.out, true);
 
-        await cpy(`${dir}/**`, out);
+            await cpy(`${dir}/**`, out);
+        }
     }
 
     console.log();
