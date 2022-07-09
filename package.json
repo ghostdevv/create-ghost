@@ -8,7 +8,8 @@
     "README.md"
   ],
   "bin": {
-    "create-ghost": "./src/bin.js"
+    "create-ghost": "./src/bin.js",
+    "ghost": "./src/bin.js"
   },
   "repository": {
     "type": "git",
