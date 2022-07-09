@@ -1,6 +1,6 @@
 {
   "name": "create-ghost",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "files": [
     "src",
@@ -25,7 +25,7 @@
     "desm": "^1.2.0",
     "kleur": "^4.1.4",
     "log-symbols": "^5.1.0",
-    "minimist": "^1.2.5",
+    "minimist": "^1.2.6",
     "prompts": "^2.4.2",
     "update-notifier": "^5.1.0"
   },
