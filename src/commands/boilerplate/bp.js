@@ -1,5 +1,5 @@
 import { existsSync, readdirSync, mkdirSync, copyFileSync } from 'fs';
-import { onCancel } from '../../utils/prompts.js';
+import { onCancel, checkForce } from '../../utils/prompts.js';
 import { dirname, join, resolve } from 'path';
 import { join as desmJoin } from 'desm';
 import logSymbols from 'log-symbols';
@@ -19,20 +19,6 @@ const loadItem = async (path) => {
         path,
     };
 };
-
-async function checkForce(file, dir = false) {
-    const message = `Is it ok to ${kleur.red('OVERWRITE')} ${
-        dir ? 'some files in' : ''
-    } ${file}`;
-
-    const { check } = await prompts({
-        type: 'confirm',
-        name: 'check',
-        message,
-    });
-
-    if (!check) onCancel();
-}
 
 export const run = async (args) => {
     const itemsDirectory = desmJoin(import.meta.url, './items');
