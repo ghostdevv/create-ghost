@@ -8,3 +8,5 @@ package.json                    # Replace REPO_URL with your repo url e.g. https
 LICENSE                         # Put your License into here (if not MIT also change package.json)
 .github/workflows/release.yml   # Replace REPO_NAME with your username/repo e.g. ghostdevv/neru - also ensure that a NPM_TOKEN secret is added to the repository
 ```
+
+todo add note about github bot
