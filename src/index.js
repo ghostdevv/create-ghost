@@ -6,18 +6,18 @@ import * as bp from './commands/boilerplate/bp.js';
 
 const commands = {
     bp,
-    create
+    create,
 };
 
 export const createHelpText = () => `  npm init ghost <command>
   
   Global Flags:
-   -h, --help          get the help menu
+\t-h, --help          get the help menu
 
   Commands:
-   ${Object.entries(commands)
-       .map(([name, command]) => ` ${name} \t - ${command.meta.description}`)
-       .join('\n')}`;
+${Object.entries(commands)
+    .map(([name, command]) => `\t${name} \t - ${command.meta.description}`)
+    .join('\n')}`;
 
 export const run = async ({ args }) => {
     console.log(`  ${k.dim(`v${'1.0.0'}`)}`);
