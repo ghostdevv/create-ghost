@@ -1,14 +1,39 @@
 #!/usr/bin/env node
 import updateNotifier from 'update-notifier';
-import { readFile } from 'fs/promises';
-import { run } from '../src/index.js';
-import minimist from 'minimist';
+import { readFileSync } from 'fs';
+import { join } from 'desm';
+import kleur from 'kleur';
+import sade from 'sade';
 
-const args = minimist(process.argv.slice(2));
+import { run as boilerplateCommand } from './commands/boilerplate/bp.js';
+import { run as createCommand } from './commands/create/create.js';
 
-run({ args });
+const pkgPath = join(import.meta.url, '../package.json');
+const pkg = JSON.parse(readFileSync(pkgPath, 'utf-8'));
 
-try {
-    const pkg = await readFile('../package.json', 'utf-8');
-    updateNotifier({ pkg: JSON.parse(pkg) }).notify();
-} catch {}
+const program = sade('create-ghost');
+
+program.version(pkg.version);
+
+program
+    .command('bp')
+    .alias('boilerplate')
+    .describe('Get common boilerplate snippets')
+    .option('-f, --force', 'Skip the confirmation for overwriting files', false)
+    .action(boilerplateCommand);
+
+program
+    .command('create')
+    .describe('Common templates')
+    .option('-f, --force', 'Skip the confirmation for overwriting files', false)
+    .action(createCommand);
+
+function run() {
+    console.log(`  ${kleur.dim(`v${pkg.version}`)}`);
+    console.log(`  ${kleur.bold().blue('create-ghost')}`);
+
+    program.parse(process.argv);
+    updateNotifier({ pkg }).notify();
+}
+
+run();

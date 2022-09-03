@@ -7,13 +7,9 @@ import prompts from 'prompts';
 import kleur from 'kleur';
 import cpy from 'cpy';
 
-export const meta = {
-    description: 'Common templates',
-};
-
 const templates = [{ name: 'Changesets Monorepo', path: 'monorepo' }];
 
-export const run = async (args) => {
+export const run = async ({ force }) => {
     const { template, out } = await prompts([
         {
             name: 'template',
@@ -33,7 +29,7 @@ export const run = async (args) => {
 
     const outPath = resolve(out);
 
-    if (existsSync(outPath) && !args.force) {
+    if (existsSync(outPath) && !force) {
         await checkForce(outPath);
 
         const stat = statSync(outPath);

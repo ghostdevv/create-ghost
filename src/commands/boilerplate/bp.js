@@ -7,10 +7,6 @@ import prompts from 'prompts';
 import kleur from 'kleur';
 import cpy from 'cpy';
 
-export const meta = {
-    description: 'Get common boilerplate code such as configs',
-};
-
 const loadItem = async (path) => {
     const { default: meta } = await import(join(path, 'meta.js'));
 
@@ -20,7 +16,8 @@ const loadItem = async (path) => {
     };
 };
 
-export const run = async (args) => {
+/** @type {import('sade').Handler} */
+export const run = async ({ force }) => {
     const itemsDirectory = desmJoin(import.meta.url, './items');
     const dirs = readdirSync(itemsDirectory);
 
@@ -58,7 +55,7 @@ export const run = async (args) => {
             const file = join(item.path, item.file);
             const out = resolve(item.out);
 
-            if (existsSync(out) && !args.force) await checkForce(item.file);
+            if (existsSync(out) && !force) await checkForce(item.file);
 
             mkdirSync(dirname(out), { recursive: true });
             copyFileSync(file, out);
@@ -68,7 +65,7 @@ export const run = async (args) => {
 
             const exists = existsSync(out);
 
-            if (exists && !args.force) await checkForce(item.out, true);
+            if (exists && !force) await checkForce(item.out, true);
 
             await cpy(`${dir}/**`, out);
         }
