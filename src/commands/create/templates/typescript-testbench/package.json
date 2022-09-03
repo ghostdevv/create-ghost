@@ -1,0 +1,13 @@
+{
+    "private": true,
+    "type": "module",
+    "main": "src/index.ts",
+    "scripts": {
+        "dev": "nodemon -e js,ts --loader tsm ."
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.19",
+        "tsm": "^2.2.2",
+        "typescript": "^4.8.2"
+    }
+}
