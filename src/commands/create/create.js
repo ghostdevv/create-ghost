@@ -1,31 +1,47 @@
+import { existsSync, statSync, rmSync, readdirSync } from 'fs';
 import { onCancel, checkForce } from '../../utils/prompts.js';
-import { existsSync, statSync, rmSync } from 'fs';
 import { join as desmJoin } from 'desm';
 import logSymbols from 'log-symbols';
-import { resolve } from 'path';
+import { join, resolve } from 'path';
 import prompts from 'prompts';
 import kleur from 'kleur';
 import cpy from 'cpy';
 
-const templates = [{ name: 'Changesets Monorepo', path: 'monorepo' }];
+async function loadTemplates() {
+    const path = desmJoin(import.meta.url, './templates');
+    const dirs = readdirSync(path);
+
+    return dirs.map((name) => ({
+        path: join(path, name),
+        name: name
+            .split('-')
+            .map((x) => x[0].toUpperCase() + x.slice(1))
+            .join(' '),
+    }));
+}
 
 export const run = async ({ force }) => {
-    const { template, out } = await prompts([
-        {
-            name: 'template',
-            type: 'select',
-            message: 'Select a template',
-            choices: templates.map((t) => ({
-                title: t.name,
-                value: desmJoin(import.meta.url, 'templates/', t.path),
-            })),
-        },
-        {
-            name: 'out',
-            type: 'text',
-            message: 'What folder should we put the template in?'
-        }
-    ], { onCancel });
+    const templates = await loadTemplates();
+
+    const { template, out } = await prompts(
+        [
+            {
+                name: 'template',
+                type: 'select',
+                message: 'Select a template',
+                choices: templates.map((t) => ({
+                    title: t.name,
+                    value: t.path,
+                })),
+            },
+            {
+                name: 'out',
+                type: 'text',
+                message: 'What folder should we put the template in?',
+            },
+        ],
+        { onCancel },
+    );
 
     const outPath = resolve(out);
 
@@ -33,13 +49,15 @@ export const run = async ({ force }) => {
         await checkForce(outPath);
 
         const stat = statSync(outPath);
-        
+
         if (!stat.isDirectory()) {
             rmSync(outPath);
         }
-    };
+    }
 
     await cpy(`${template}/**`, outPath);
 
-    console.log(`${logSymbols.success} Created a folder called ${kleur.gray(out)}`);
+    console.log(
+        `${logSymbols.success} Created a folder called ${kleur.gray(out)}`,
+    );
 };
