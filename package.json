@@ -27,11 +27,11 @@
     "kleur": "^4.1.5",
     "log-symbols": "^5.1.0",
     "prompts": "^2.4.2",
-    "update-notifier": "^6.0.2"
+    "update-notifier": "^6.0.2",
+    "sade": "^1.8.1"
   },
   "devDependencies": {
     "@types/prompts": "^2.0.14",
-    "@types/update-notifier": "^6.0.1",
-    "sade": "^1.8.1"
+    "@types/update-notifier": "^6.0.1"
   }
 }
