@@ -7,46 +7,41 @@ import prompts from 'prompts';
 import kleur from 'kleur';
 import cpy from 'cpy';
 
-const loadItem = async (path) => {
-    const { default: meta } = await import(join(path, 'meta.js'));
-
-    return {
-        ...meta,
-        path,
-    };
-};
-
-/** @type {import('sade').Handler} */
-export const run = async ({ force }) => {
-    const itemsDirectory = desmJoin(import.meta.url, './items');
-    const dirs = readdirSync(itemsDirectory);
+async function load() {
+    const itemsPath = desmJoin(import.meta.url, './items');
+    const dirs = readdirSync(itemsPath);
 
     const items = new Map();
     const choices = [];
 
     for (const dir of dirs) {
-        const path = join(itemsDirectory, dir);
-        const item = await loadItem(path);
+        const itemPath = join(itemsPath, dir);
+        const metaPath = join(itemPath, 'meta.js');
 
-        items.set(dir, item);
+        const { default: meta } = await import(metaPath);
 
-        choices.push({
-            title: item.name,
-            value: dir,
-        });
+        items.set(itemPath, { ...meta, path: itemPath });
+        choices.push({ title: meta.name, value: itemPath });
     }
 
-    const { itemDirs } = await prompts(
+    return { items, choices };
+}
+
+/** @type {import('sade').Handler} */
+export const run = async ({ force }) => {
+    const { items, choices } = await load();
+
+    const { directories } = await prompts(
         {
             type: 'multiselect',
             message: 'Select an bp item',
-            name: 'itemDirs',
+            name: 'directories',
             choices,
         },
         { onCancel },
     );
 
-    for (const dir of itemDirs) {
+    for (const dir of directories) {
         console.log();
 
         const item = items.get(dir);
