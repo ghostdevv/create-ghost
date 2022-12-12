@@ -55,7 +55,10 @@ export const run = async ({ force }) => {
         }
     }
 
-    await cpy(`${template}/**`, outPath);
+    await cpy(`${template}/**`, outPath, {
+        rename: (basename) =>
+            basename.startsWith('_') ? `.${basename.slice(1)}` : basename,
+    });
 
     console.log(
         `${logSymbols.success} Created a folder called ${kleur.gray(out)}`,
