@@ -1,0 +1,16 @@
+{
+    "private": true,
+    "version": "0.0.0",
+    "scripts": {
+        "build": "esbuild src/index.ts --bundle --outfile=dist/index.mjs --platform=neutral",
+        "dev": "miniflare -w",
+        "deploy": "wrangler publish"
+    },
+    "devDependencies": {
+        "@cloudflare/workers-types": "^4.20230321.0",
+        "esbuild": "^0.17.14",
+        "miniflare": "^2.13.0",
+        "typescript": "^5.0.2",
+        "wrangler": "^2.13.0"
+    }
+}
