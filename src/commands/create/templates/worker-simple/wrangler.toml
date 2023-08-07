@@ -1,6 +1,6 @@
 name = "CHANGE_ME"
 account_id = "44321e1b7fbd29b56b65c1890a3bbee2"
-compatibility_date = "2023-05-10"
+compatibility_date = "2023-08-7"
 
 main = "src/index.ts"
 
