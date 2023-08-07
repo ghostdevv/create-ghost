@@ -2,8 +2,8 @@
     "private": true,
     "version": "0.0.0",
     "scripts": {
-        "dev": "wrangler dev --local",
-        "deploy": "wrangler publish"
+        "dev": "wrangler dev",
+        "deploy": "wrangler deploy --minify"
     },
     "devDependencies": {
         "@cloudflare/workers-types": "^4.20230801.0",
