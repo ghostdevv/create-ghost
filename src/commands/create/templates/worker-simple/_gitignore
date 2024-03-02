@@ -4,3 +4,4 @@ node_modules
 .mf
 dist
 .wrangler
+.dev.vars
