@@ -1,0 +1,12 @@
+{
+    "tasks": {
+        "dev": "deno run --watch main.ts"
+    },
+    "fmt": {
+        "singleQuote": true,
+        "semiColons": true,
+        "useTabs": true,
+        "indentWidth": 4,
+        "lineWidth": 100
+    }
+}
