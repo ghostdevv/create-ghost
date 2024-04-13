@@ -56,6 +56,7 @@ export const run = async ({ force }) => {
     }
 
     await cpy(`${template}/**`, outPath, {
+        dot: true,
         rename: (basename) =>
             basename.startsWith('_') ? `.${basename.slice(1)}` : basename,
     });
