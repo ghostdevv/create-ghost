@@ -1,5 +1,7 @@
 # Changesets Monorepo
 
+Personal notes: internal pacakges should be scoped and have `private: true`
+
 1. Update configs
 
     | File                            | Step                                                                            |
