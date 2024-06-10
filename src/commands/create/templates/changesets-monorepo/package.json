@@ -10,13 +10,13 @@
         "build": "pnpm --parallel -r build",
         "lint": "pnpm -r lint"
     },
-    "homepage": "REPO_URL",
+    "homepage": "https://github.com/REPO_NAME",
     "repository": {
         "type": "git",
-        "url": "git+REPO_URL"
+        "url": "git+https://github.com/REPO_NAME"
     },
     "bugs": {
-        "url": "REPO_URL"
+        "url": "https://github.com/REPO_NAME"
     },
     "packageManager": "pnpm@8.15.7",
     "engines": {
