@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import updateNotifier from 'update-notifier';
+import { checkForUpdate } from './utils/version.js';
 import { readFileSync } from 'fs';
 import { join } from 'desm';
 import pc from 'picocolors';
@@ -28,12 +28,16 @@ program
     .option('-f, --force', 'Skip the confirmation for overwriting files', false)
     .action(createCommand);
 
-function run() {
-    console.log(`  ${pc.dim(`v${pkg.version}`)}`);
-    console.log(`  ${pc.bold(pc.blue('create-ghost'))}`);
+const update = await checkForUpdate(pkg.version);
 
-    program.parse(process.argv);
-    updateNotifier({ pkg }).notify();
-}
+console.log(
+    pc.dim(`  v${pkg.version}`),
+    update?.available
+        ? // prettier-ignore
+          `=> ${pc.reset(pc.green('v' + update.version))} ${pc.dim('(Update Available)')}`
+        : '',
+);
 
-run();
+console.log(`  ${pc.bold(pc.blue('create-ghost'))}\n`);
+
+program.parse(process.argv);

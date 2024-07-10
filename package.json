@@ -27,13 +27,11 @@
     "log-symbols": "^5.1.0",
     "picocolors": "^1.0.1",
     "prompts": "^2.4.2",
-    "sade": "^1.8.1",
-    "update-notifier": "^6.0.2"
+    "sade": "^1.8.1"
   },
   "devDependencies": {
     "@types/node": "^18.19.39",
     "@types/prompts": "^2.4.9",
-    "@types/update-notifier": "^6.0.8",
     "typescript": "^5.5.3"
   }
 }
