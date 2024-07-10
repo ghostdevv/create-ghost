@@ -20,6 +20,9 @@ export async function checkForUpdate(currentVersion) {
 
 /**
  * Compare two semver versions
+ *
+ * Based on MIT Licenced code from semver-compare
+ * https://www.npmjs.com/package/semver-compare
  * @param {string} a
  * @param {string} b
  * @returns
