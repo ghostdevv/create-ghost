@@ -4,7 +4,7 @@ import { join as desmJoin } from 'desm';
 import logSymbols from 'log-symbols';
 import { join, resolve } from 'path';
 import prompts from 'prompts';
-import kleur from 'kleur';
+import pc from 'picocolors';
 import cpy from 'cpy';
 
 async function loadTemplates() {
@@ -62,6 +62,6 @@ export const run = async ({ force }) => {
     });
 
     console.log(
-        `${logSymbols.success} Created a folder called ${kleur.gray(out)}`,
+        `${logSymbols.success} Created a folder called ${pc.gray(out)}`,
     );
 };

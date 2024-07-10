@@ -4,7 +4,7 @@ import { dirname, join, resolve } from 'path';
 import { join as desmJoin } from 'desm';
 import logSymbols from 'log-symbols';
 import prompts from 'prompts';
-import kleur from 'kleur';
+import pc from 'picocolors';
 import cpy from 'cpy';
 
 async function load() {
@@ -67,5 +67,5 @@ export const run = async ({ force }) => {
     }
 
     console.log();
-    console.log(`${logSymbols.success} ${kleur.green('Done')}`);
+    console.log(`${logSymbols.success} ${pc.green('Done')}`);
 };

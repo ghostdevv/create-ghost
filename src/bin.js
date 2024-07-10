@@ -2,7 +2,7 @@
 import updateNotifier from 'update-notifier';
 import { readFileSync } from 'fs';
 import { join } from 'desm';
-import kleur from 'kleur';
+import pc from 'picocolors';
 import sade from 'sade';
 
 import { run as boilerplateCommand } from './commands/boilerplate/bp.js';
@@ -29,8 +29,8 @@ program
     .action(createCommand);
 
 function run() {
-    console.log(`  ${kleur.dim(`v${pkg.version}`)}`);
-    console.log(`  ${kleur.bold().blue('create-ghost')}`);
+    console.log(`  ${pc.dim(`v${pkg.version}`)}`);
+    console.log(`  ${pc.bold(pc.blue('create-ghost'))}`);
 
     program.parse(process.argv);
     updateNotifier({ pkg }).notify();

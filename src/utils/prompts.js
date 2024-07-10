@@ -1,14 +1,15 @@
 import prompts from 'prompts';
-import k from 'kleur';
+import pc from 'picocolors';
 
 export function onCancel() {
     console.log();
-    console.log(`  ${k.bold().red('Exited')} ${k.blue().dim('create-ghost')}`);
+    // prettier-ignore
+    console.log(`  ${pc.bold(pc.red('Exited'))} ${pc.blue().dim('create-ghost')}`);
     process.exit(0);
 }
 
 export async function checkForce(file, dir = false) {
-    const message = `Is it ok to ${k.red('OVERWRITE')} ${
+    const message = `Is it ok to ${pc.red('OVERWRITE')} ${
         dir ? 'some files in' : ''
     } ${file}`;
 
