@@ -20,6 +20,7 @@ async function loadTemplates() {
     }));
 }
 
+/** @type {import('sade').Handler} */
 export const run = async ({ force }) => {
     const templates = await loadTemplates();
 
