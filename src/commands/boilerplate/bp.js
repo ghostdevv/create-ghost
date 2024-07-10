@@ -1,11 +1,11 @@
 import { existsSync, readdirSync, mkdirSync, copyFileSync } from 'fs';
 import { onCancel, checkForce } from '../../utils/prompts.js';
 import { dirname, join, resolve } from 'path';
+import { copy } from '../../utils/copy.js';
 import { join as desmJoin } from 'desm';
 import logSymbols from 'log-symbols';
 import prompts from 'prompts';
 import pc from 'picocolors';
-import cpy from 'cpy';
 
 async function load() {
     const itemsPath = desmJoin(import.meta.url, './items');
@@ -62,7 +62,7 @@ export const run = async ({ force }) => {
 
             if (exists && !force) await checkForce(item.out, true);
 
-            await cpy(`${dir}/**`, out);
+            await copy(dir, out);
         }
     }
 

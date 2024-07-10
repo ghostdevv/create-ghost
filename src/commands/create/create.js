@@ -1,11 +1,11 @@
 import { existsSync, statSync, rmSync, readdirSync } from 'fs';
 import { onCancel, checkForce } from '../../utils/prompts.js';
+import { copy } from '../../utils/copy.js';
 import { join as desmJoin } from 'desm';
 import logSymbols from 'log-symbols';
 import { join, resolve } from 'path';
 import prompts from 'prompts';
 import pc from 'picocolors';
-import cpy from 'cpy';
 
 async function loadTemplates() {
     const path = desmJoin(import.meta.url, './templates');
@@ -56,11 +56,7 @@ export const run = async ({ force }) => {
         }
     }
 
-    await cpy(`${template}/**`, outPath, {
-        dot: true,
-        rename: (basename) =>
-            basename.startsWith('_') ? `.${basename.slice(1)}` : basename,
-    });
+    await copy(template, outPath);
 
     console.log(
         `${logSymbols.success} Created a folder called ${pc.gray(out)}`,
