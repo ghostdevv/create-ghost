@@ -3,7 +3,7 @@
     "private": true,
     "license": "MIT",
     "devDependencies": {
-        "@changesets/cli": "^2.27.7",
+        "@changesets/cli": "^2.27.8",
         "@svitejs/changesets-changelog-github-compact": "^1.1.0"
     },
     "scripts": {
@@ -18,7 +18,7 @@
     "bugs": {
         "url": "https://github.com/REPO_NAME"
     },
-    "packageManager": "pnpm@8.15.7",
+    "packageManager": "pnpm@8.15.9",
     "engines": {
         "pnpm": "^8.0.0",
         "npm": "forbidden, use pnpm",
