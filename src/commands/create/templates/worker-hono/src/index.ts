@@ -7,7 +7,7 @@ const app = new Hono<Env>();
 app.use('*', logger());
 
 app.get('/', (c) => {
-    return c.text('Hello World');
+	return c.text('Hello World');
 });
 
 export default app;

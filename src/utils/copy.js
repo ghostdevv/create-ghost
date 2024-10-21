@@ -8,19 +8,19 @@ import { join } from 'node:path';
  * @param {string} to
  */
 export async function copy(from, to) {
-    await cp(from, to, { recursive: true });
+	await cp(from, to, { recursive: true });
 
-    const files = await readdir(to, {
-        withFileTypes: true,
-        recursive: true,
-    });
+	const files = await readdir(to, {
+		withFileTypes: true,
+		recursive: true,
+	});
 
-    for (const file of files) {
-        if (file.name.startsWith('_')) {
-            await rename(
-                join(file.parentPath, file.name),
-                join(file.parentPath, `.${file.name.slice(1)}`),
-            );
-        }
-    }
+	for (const file of files) {
+		if (file.name.startsWith('_')) {
+			await rename(
+				join(file.parentPath, file.name),
+				join(file.parentPath, `.${file.name.slice(1)}`),
+			);
+		}
+	}
 }

@@ -1,14 +1,14 @@
 {
-    "name": "typescript-testbench",
-    "private": true,
-    "type": "module",
-    "main": "src/index.ts",
-    "scripts": {
-        "dev": "nodemon -e js,ts --loader tsm ."
-    },
-    "devDependencies": {
-        "nodemon": "^2.0.22",
-        "tsm": "^2.3.0",
-        "typescript": "^5.5.4"
-    }
+	"name": "typescript-testbench",
+	"private": true,
+	"type": "module",
+	"main": "src/index.ts",
+	"scripts": {
+		"dev": "nodemon -e js,ts --loader tsm ."
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.22",
+		"tsm": "^2.3.0",
+		"typescript": "^5.5.4"
+	}
 }

@@ -1,5 +1,5 @@
 export default {
-    name: 'License',
-    file: 'LICENSE',
-    out: 'LICENSE',
+	name: 'License',
+	file: 'LICENSE',
+	out: 'LICENSE',
 };

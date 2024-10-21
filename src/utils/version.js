@@ -3,19 +3,19 @@
  * @param {string} currentVersion
  */
 export async function checkForUpdate(currentVersion) {
-    try {
-        const res = await fetch('https://npm.antfu.dev/create-ghost');
+	try {
+		const res = await fetch('https://npm.antfu.dev/create-ghost');
 
-        /** @type {{ version: string; }} */
-        const { version } = await res.json();
+		/** @type {{ version: string; }} */
+		const { version } = await res.json();
 
-        return {
-            available: compare(version, currentVersion) === 1,
-            version,
-        };
-    } catch (e) {
-        return null;
-    }
+		return {
+			available: compare(version, currentVersion) === 1,
+			version,
+		};
+	} catch (e) {
+		return null;
+	}
 }
 
 /**
@@ -28,17 +28,17 @@ export async function checkForUpdate(currentVersion) {
  * @returns
  */
 function compare(a, b) {
-    const pa = a.split('.');
-    const pb = b.split('.');
+	const pa = a.split('.');
+	const pb = b.split('.');
 
-    for (let i = 0; i < 3; i++) {
-        const na = Number(pa[i]);
-        const nb = Number(pb[i]);
-        if (na > nb) return 1;
-        if (nb > na) return -1;
-        if (!isNaN(na) && isNaN(nb)) return 1;
-        if (isNaN(na) && !isNaN(nb)) return -1;
-    }
+	for (let i = 0; i < 3; i++) {
+		const na = Number(pa[i]);
+		const nb = Number(pb[i]);
+		if (na > nb) return 1;
+		if (nb > na) return -1;
+		if (!isNaN(na) && isNaN(nb)) return 1;
+		if (isNaN(na) && !isNaN(nb)) return -1;
+	}
 
-    return 0;
+	return 0;
 }

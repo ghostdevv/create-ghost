@@ -1,5 +1,5 @@
 export default {
-    name: 'Prettier Config Svelte',
-    file: 'prettier.json',
-    out: '.prettierrc',
+	name: 'Prettier Config Svelte',
+	file: 'prettier.json',
+	out: '.prettierrc',
 };

@@ -1,22 +1,22 @@
 {
-    "name": "example",
-    "version": "0.1.0",
-    "type": "module",
-    "main": "",
-    "module": "",
-    "types": "",
-    "exports": {
-        "./package.json": "./package.json",
-        ".": {
-            "types": "",
-            "import": "",
-            "require": ""
-        }
-    },
-    "scripts": {
-        "lint": "publint"
-    },
-    "devDependencies": {
-        "publint": "^0.2.10"
-    }
+	"name": "example",
+	"version": "0.1.0",
+	"type": "module",
+	"main": "",
+	"module": "",
+	"types": "",
+	"exports": {
+		"./package.json": "./package.json",
+		".": {
+			"types": "",
+			"import": "",
+			"require": ""
+		}
+	},
+	"scripts": {
+		"lint": "publint"
+	},
+	"devDependencies": {
+		"publint": "^0.2.10"
+	}
 }

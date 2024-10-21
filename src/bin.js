@@ -16,26 +16,26 @@ const program = sade('create-ghost');
 program.version(pkg.version);
 
 program
-    .command('bp')
-    .alias('boilerplate')
-    .describe('Get common boilerplate snippets')
-    .option('-f, --force', 'Skip the confirmation for overwriting files', false)
-    .action(boilerplateCommand);
+	.command('bp')
+	.alias('boilerplate')
+	.describe('Get common boilerplate snippets')
+	.option('-f, --force', 'Skip the confirmation for overwriting files', false)
+	.action(boilerplateCommand);
 
 program
-    .command('create')
-    .describe('Common templates')
-    .option('-f, --force', 'Skip the confirmation for overwriting files', false)
-    .action(createCommand);
+	.command('create')
+	.describe('Common templates')
+	.option('-f, --force', 'Skip the confirmation for overwriting files', false)
+	.action(createCommand);
 
 const update = await checkForUpdate(pkg.version);
 
 console.log(
-    pc.dim(`  v${pkg.version}`),
-    update?.available
-        ? // prettier-ignore
-          `=> ${pc.reset(pc.green('v' + update.version))} ${pc.dim('(Update Available)')}`
-        : '',
+	pc.dim(`  v${pkg.version}`),
+	update?.available
+		? // prettier-ignore
+			`=> ${pc.reset(pc.green('v' + update.version))} ${pc.dim('(Update Available)')}`
+		: '',
 );
 
 console.log(`  ${pc.bold(pc.blue('create-ghost'))}\n`);

@@ -8,57 +8,57 @@ import prompts from 'prompts';
 import pc from 'picocolors';
 
 async function loadTemplates() {
-    const path = desmJoin(import.meta.url, './templates');
-    const dirs = readdirSync(path);
+	const path = desmJoin(import.meta.url, './templates');
+	const dirs = readdirSync(path);
 
-    return dirs.map((name) => ({
-        path: join(path, name),
-        name: name
-            .split('-')
-            .map((x) => x[0].toUpperCase() + x.slice(1))
-            .join(' '),
-    }));
+	return dirs.map((name) => ({
+		path: join(path, name),
+		name: name
+			.split('-')
+			.map((x) => x[0].toUpperCase() + x.slice(1))
+			.join(' '),
+	}));
 }
 
 /** @type {import('sade').Handler} */
 export const run = async ({ force }) => {
-    const templates = await loadTemplates();
+	const templates = await loadTemplates();
 
-    const { template, out } = await prompts(
-        [
-            {
-                name: 'template',
-                type: 'select',
-                message: 'Select a template',
-                choices: templates.map((t) => ({
-                    title: t.name,
-                    value: t.path,
-                })),
-            },
-            {
-                name: 'out',
-                type: 'text',
-                message: 'What folder should we put the template in?',
-            },
-        ],
-        { onCancel },
-    );
+	const { template, out } = await prompts(
+		[
+			{
+				name: 'template',
+				type: 'select',
+				message: 'Select a template',
+				choices: templates.map((t) => ({
+					title: t.name,
+					value: t.path,
+				})),
+			},
+			{
+				name: 'out',
+				type: 'text',
+				message: 'What folder should we put the template in?',
+			},
+		],
+		{ onCancel },
+	);
 
-    const outPath = resolve(out);
+	const outPath = resolve(out);
 
-    if (existsSync(outPath) && !force) {
-        await checkForce(outPath);
+	if (existsSync(outPath) && !force) {
+		await checkForce(outPath);
 
-        const stat = statSync(outPath);
+		const stat = statSync(outPath);
 
-        if (!stat.isDirectory()) {
-            rmSync(outPath);
-        }
-    }
+		if (!stat.isDirectory()) {
+			rmSync(outPath);
+		}
+	}
 
-    await copy(template, outPath);
+	await copy(template, outPath);
 
-    console.log(
-        `${logSymbols.success} Created a folder called ${pc.gray(out)}`,
-    );
+	console.log(
+		`${logSymbols.success} Created a folder called ${pc.gray(out)}`,
+	);
 };

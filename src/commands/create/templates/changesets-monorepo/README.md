@@ -17,7 +17,7 @@ Personal notes: internal pacakges should be scoped and have `private: true` in y
 
     ![](https://i.imgur.com/hQqJtHF.png)
 
-3. Create & Save a `NPM_TOKEN`
+4. Create & Save a `NPM_TOKEN`
 
     1. Visit [npm](https://www.npmjs.com) and navigate to "Access Tokens"
 
@@ -34,4 +34,3 @@ Personal notes: internal pacakges should be scoped and have `private: true` in y
     3. Navigate to your repository secrets page: `https://github.com/REPO_NAME/settings/secrets/actions`. You can then create a new one called `NPM_TOKEN` and paste it in.
 
         ![](blob:https://imgur.com/69a949cf-e04c-4429-a932-2b09b50fdc2e)
-
