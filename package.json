@@ -1,6 +1,6 @@
 {
 	"name": "create-ghost",
-	"version": "1.13.3",
+	"version": "1.13.4",
 	"type": "module",
 	"files": [
 		"src",
