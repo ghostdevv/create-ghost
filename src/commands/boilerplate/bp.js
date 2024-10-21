@@ -1,11 +1,13 @@
 import { existsSync, readdirSync, mkdirSync, copyFileSync } from 'fs';
 import { onCancel, checkForce } from '../../utils/prompts.js';
+import { readFile, writeFile } from 'node:fs/promises';
 import { logSymbols } from '../../utils/symbols.js';
 import { dirname, join, resolve } from 'path';
 import { copy } from '../../utils/copy.js';
 import { join as desmJoin } from 'desm';
 import prompts from 'prompts';
 import pc from 'picocolors';
+import exec from 'nanoexec';
 
 async function load() {
 	const itemsPath = desmJoin(import.meta.url, './items');
@@ -54,6 +56,27 @@ export const run = async ({ force }) => {
 
 			mkdirSync(dirname(out), { recursive: true });
 			copyFileSync(file, out);
+
+			// todo add proper hooks
+			if (item.file == 'LICENSE') {
+				const gitResult = await exec(
+					'git',
+					['log', '--reverse', '--format=%cd', '--date=format:%Y'],
+					{ shell: true },
+				);
+
+				const maybeYear = parseInt(
+					gitResult.stdout.toString().trim().split('\n')[0],
+				);
+
+				const year = Number.isNaN(maybeYear)
+					? new Date().getFullYear()
+					: maybeYear;
+
+				let contents = await readFile(out, 'utf-8');
+				contents = contents.replace(/{YEAR}/g, `${year}`);
+				await writeFile(out, contents, 'utf-8');
+			}
 		} else {
 			const dir = join(item.path, item.dir);
 			const out = resolve(item.out);
