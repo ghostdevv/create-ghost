@@ -24,7 +24,13 @@ program
 
 program
 	.command('create')
-	.describe('Common templates')
+	.describe('Deprecated, please use `create-ghost template` instead')
+	.option('-f, --force', 'Skip the confirmation for overwriting files', false)
+	.action(createCommand);
+
+program
+	.command('template')
+	.describe('Use a template to create a new project')
 	.option('-f, --force', 'Skip the confirmation for overwriting files', false)
 	.action(createCommand);
 
@@ -34,7 +40,7 @@ console.log(
 	pc.dim(`  v${pkg.version}`),
 	update?.available
 		? // prettier-ignore
-			`=> ${pc.reset(pc.green('v' + update.version))} ${pc.dim('(Update Available)')}`
+		  `=> ${pc.reset(pc.green('v' + update.version))} ${pc.dim('(Update Available)')}`
 		: '',
 );
 
