@@ -4,13 +4,12 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { logSymbols } from '../../utils/symbols.js';
 import { dirname, join, resolve } from 'path';
 import { copy } from '../../utils/copy.js';
-import { join as desmJoin } from 'desm';
 import prompts from 'prompts';
 import pc from 'picocolors';
 import exec from 'nanoexec';
 
 async function load() {
-	const itemsPath = desmJoin(import.meta.url, './items');
+	const itemsPath = join(import.meta.dirname, './items');
 	const dirs = readdirSync(itemsPath);
 
 	const items = new Map();

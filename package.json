@@ -25,7 +25,6 @@
 		"update-templates": "taze --cwd src/commands/create/templates --recursive --write"
 	},
 	"dependencies": {
-		"desm": "^1.3.1",
 		"nanoexec": "^1.1.0",
 		"picocolors": "^1.1.1",
 		"prompts": "^2.4.2",

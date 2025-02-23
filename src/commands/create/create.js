@@ -2,13 +2,12 @@ import { existsSync, statSync, rmSync, readdirSync } from 'fs';
 import { onCancel, checkForce } from '../../utils/prompts.js';
 import { logSymbols } from '../../utils/symbols.js';
 import { copy } from '../../utils/copy.js';
-import { join as desmJoin } from 'desm';
 import { join, resolve } from 'path';
 import prompts from 'prompts';
 import pc from 'picocolors';
 
 async function loadTemplates() {
-	const path = desmJoin(import.meta.url, './templates');
+	const path = join(import.meta.dirname, './templates');
 	const dirs = readdirSync(path);
 
 	return dirs.map((name) => ({

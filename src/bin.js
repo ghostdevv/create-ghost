@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 import { checkForUpdate } from './utils/version.js';
 import { readFileSync } from 'fs';
-import { join } from 'desm';
+import { join } from 'path';
 import pc from 'picocolors';
 import sade from 'sade';
 
 import { run as boilerplateCommand } from './commands/boilerplate/bp.js';
 import { run as createCommand } from './commands/create/create.js';
 
-const pkgPath = join(import.meta.url, '../package.json');
+const pkgPath = join(import.meta.dirname, '../package.json');
 const pkg = JSON.parse(readFileSync(pkgPath, 'utf-8'));
 
 const program = sade('create-ghost');
