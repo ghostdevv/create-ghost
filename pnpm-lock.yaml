@@ -30,6 +30,9 @@ importers:
       '@types/prompts':
         specifier: ^2.4.9
         version: 2.4.9
+      prettier:
+        specifier: ^3.5.2
+        version: 3.5.2
       taze:
         specifier: ^0.17.2
         version: 0.17.2
@@ -369,6 +372,11 @@ packages:
   picocolors@1.1.1:
     resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
 
+  prettier@3.5.2:
+    resolution: {integrity: sha512-lc6npv5PH7hVqozBR7lkBNOGXV9vMwROAPlumdBkX0wTbbzPu/U1hk5yL8p2pt4Xoc+2mkT8t/sow2YrV/M5qg==}
+    engines: {node: '>=14'}
+    hasBin: true
+
   promise-make-naked@3.0.0:
     resolution: {integrity: sha512-h71wwAMB2udFnlPmcxQMqKl6CckNLVKdk/ROtFivE6/VmW+rQKV0DWlGJ6VphRIoq22Tkonvdi3F+jlm5XDlow==}
 
@@ -687,6 +695,8 @@ snapshots:
   pathe@1.1.2: {}
 
   picocolors@1.1.1: {}
+
+  prettier@3.5.2: {}
 
   promise-make-naked@3.0.0: {}
 

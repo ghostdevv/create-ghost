@@ -40,7 +40,7 @@ console.log(
 	pc.dim(`  v${pkg.version}`),
 	update?.available
 		? // prettier-ignore
-		  `=> ${pc.reset(pc.green(`v${update.version}`))} ${pc.dim('(Update Available)')}`
+			`=> ${pc.reset(pc.green(`v${update.version}`))} ${pc.dim('(Update Available)')}`
 		: '',
 );
 
