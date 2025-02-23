@@ -24,7 +24,8 @@
 	"scripts": {
 		"update-templates": "taze --cwd src/commands/create/templates --recursive --write",
 		"check": "tsc --noEmit --project jsconfig.json && biome check . && prettier --check .",
-		"fix": "biome check . --fix && prettier --write ."
+		"fix": "biome check . --fix && prettier --write .",
+		"release": "changelogen --release"
 	},
 	"dependencies": {
 		"nanoexec": "^1.1.0",
@@ -36,6 +37,7 @@
 		"@biomejs/biome": "1.9.4",
 		"@types/node": "^20.17.19",
 		"@types/prompts": "^2.4.9",
+		"changelogen": "^0.5.7",
 		"prettier": "^3.5.2",
 		"taze": "^0.17.2",
 		"typescript": "^5.6.3"
