@@ -9,9 +9,9 @@
 		"sourceMap": true,
 		"strict": true,
 		"moduleResolution": "NodeNext",
-		"module": "ESNext",
+		"module": "NodeNext",
 		"target": "ESNext"
 	},
 	"include": ["src/**/*.js", "src/**/*.ts"],
-	"exclude": ["node_modules/**"]
+	"exclude": ["node_modules/**", "src/commands/create/templates/**"]
 }
