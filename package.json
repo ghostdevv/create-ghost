@@ -23,7 +23,7 @@
 	},
 	"scripts": {
 		"update-templates": "taze --cwd src/commands/create/templates --recursive --write",
-		"check": "tsc --noEmit --project jsconfig.json"
+		"check": "tsc --noEmit --project jsconfig.json && biome check ."
 	},
 	"dependencies": {
 		"nanoexec": "^1.1.0",
@@ -32,6 +32,7 @@
 		"sade": "^1.8.1"
 	},
 	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
 		"@types/node": "^20.17.19",
 		"@types/prompts": "^2.4.9",
 		"taze": "^0.17.2",

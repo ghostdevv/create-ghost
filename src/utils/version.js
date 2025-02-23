@@ -36,8 +36,8 @@ function compare(a, b) {
 		const nb = Number(pb[i]);
 		if (na > nb) return 1;
 		if (nb > na) return -1;
-		if (!isNaN(na) && isNaN(nb)) return 1;
-		if (isNaN(na) && !isNaN(nb)) return -1;
+		if (!Number.isNaN(na) && Number.isNaN(nb)) return 1;
+		if (Number.isNaN(na) && !Number.isNaN(nb)) return -1;
 	}
 
 	return 0;

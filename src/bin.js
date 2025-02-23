@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { checkForUpdate } from './utils/version.js';
-import { readFileSync } from 'fs';
-import { join } from 'path';
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import pc from 'picocolors';
 import sade from 'sade';
 
@@ -40,7 +40,7 @@ console.log(
 	pc.dim(`  v${pkg.version}`),
 	update?.available
 		? // prettier-ignore
-		  `=> ${pc.reset(pc.green('v' + update.version))} ${pc.dim('(Update Available)')}`
+		  `=> ${pc.reset(pc.green(`v${update.version}`))} ${pc.dim('(Update Available)')}`
 		: '',
 );
 

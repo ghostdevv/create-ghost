@@ -1,8 +1,8 @@
-import { existsSync, statSync, rmSync, readdirSync } from 'fs';
+import { existsSync, statSync, rmSync, readdirSync } from 'node:fs';
 import { onCancel, checkForce } from '../../utils/prompts.js';
 import { logSymbols } from '../../utils/symbols.js';
 import { copy } from '../../utils/copy.js';
-import { join, resolve } from 'path';
+import { join, resolve } from 'node:path';
 import prompts from 'prompts';
 import pc from 'picocolors';
 

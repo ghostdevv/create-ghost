@@ -1,8 +1,8 @@
-import { existsSync, readdirSync, mkdirSync, copyFileSync } from 'fs';
+import { existsSync, readdirSync, mkdirSync, copyFileSync } from 'node:fs';
 import { onCancel, checkForce } from '../../utils/prompts.js';
 import { readFile, writeFile } from 'node:fs/promises';
 import { logSymbols } from '../../utils/symbols.js';
-import { dirname, join, resolve } from 'path';
+import { dirname, join, resolve } from 'node:path';
 import { copy } from '../../utils/copy.js';
 import prompts from 'prompts';
 import pc from 'picocolors';
@@ -64,7 +64,7 @@ export const run = async ({ force }) => {
 					{ shell: true },
 				);
 
-				const maybeYear = parseInt(
+				const maybeYear = Number.parseInt(
 					gitResult.stdout.toString().trim().split('\n')[0],
 				);
 
