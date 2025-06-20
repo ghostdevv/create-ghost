@@ -34,7 +34,7 @@
 		"sade": "^1.8.1"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.9.4",
+		"@biomejs/biome": "2.0.0",
 		"@types/node": "^20.17.19",
 		"@types/prompts": "^2.4.9",
 		"changelogen": "^0.5.7",

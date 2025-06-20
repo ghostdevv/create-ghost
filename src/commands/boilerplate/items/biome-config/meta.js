@@ -1,5 +1,5 @@
 export default {
 	name: 'Biome Config',
-	file: 'biome.json',
+	file: 'config.json',
 	out: 'biome.json',
 };
