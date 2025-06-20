@@ -48,7 +48,7 @@ export const run = async ({ force }) => {
 			const file = join(item.path, item.file);
 			const out = resolve(item.out);
 
-			if (existsSync(out) && !force) await checkForce(item.file);
+			if (existsSync(out) && !force) await checkForce(item.out);
 
 			mkdirSync(dirname(out), { recursive: true });
 			copyFileSync(file, out);
