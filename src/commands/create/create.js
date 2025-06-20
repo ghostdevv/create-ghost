@@ -1,9 +1,9 @@
 import { existsSync, statSync, rmSync, readdirSync } from 'node:fs';
-import { onCancel, checkForce } from '../../utils/prompts.js';
+import { checkForce, onCancel } from '../../utils/prompts.js';
 import { logSymbols } from '../../utils/symbols.js';
+import { select, text, group } from '@clack/prompts';
 import { copy } from '../../utils/copy.js';
 import { join, resolve } from 'node:path';
-import prompts from 'prompts';
 import pc from 'picocolors';
 
 async function loadTemplates() {
@@ -23,23 +23,21 @@ async function loadTemplates() {
 export const run = async ({ force }) => {
 	const templates = await loadTemplates();
 
-	const { template, out } = await prompts(
-		[
-			{
-				name: 'template',
-				type: 'select',
-				message: 'Select a template',
-				choices: templates.map((t) => ({
-					title: t.name,
-					value: t.path,
-				})),
-			},
-			{
-				name: 'out',
-				type: 'text',
-				message: 'What folder should we put the template in?',
-			},
-		],
+	const { template, out } = await group(
+		{
+			template: () =>
+				select({
+					message: 'Select a template',
+					options: templates.map((t) => ({
+						label: t.name,
+						value: t.path,
+					})),
+				}),
+			out: () =>
+				text({
+					message: 'What folder should we put the template in?',
+				}),
+		},
 		{ onCancel },
 	);
 

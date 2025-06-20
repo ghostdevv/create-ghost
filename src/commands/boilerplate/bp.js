@@ -1,10 +1,10 @@
 import { existsSync, readdirSync, mkdirSync, copyFileSync } from 'node:fs';
-import { onCancel, checkForce } from '../../utils/prompts.js';
+import { checkForce, handleCancel } from '../../utils/prompts.js';
 import { readFile, writeFile } from 'node:fs/promises';
 import { logSymbols } from '../../utils/symbols.js';
 import { dirname, join, resolve } from 'node:path';
+import { multiselect } from '@clack/prompts';
 import { copy } from '../../utils/copy.js';
-import prompts from 'prompts';
 import pc from 'picocolors';
 import exec from 'nanoexec';
 
@@ -13,7 +13,7 @@ async function load() {
 	const dirs = readdirSync(itemsPath);
 
 	const items = new Map();
-	const choices = [];
+	const options = [];
 
 	for (const dir of dirs) {
 		const itemPath = join(itemsPath, dir);
@@ -22,25 +22,22 @@ async function load() {
 		const { default: meta } = await import(metaPath);
 
 		items.set(itemPath, { ...meta, path: itemPath });
-		choices.push({ title: meta.name, value: itemPath });
+		options.push({ label: meta.name, value: itemPath });
 	}
 
-	return { items, choices };
+	return { items, options };
 }
 
 /** @type {import('sade').Handler} */
 export const run = async ({ force }) => {
-	const { items, choices } = await load();
+	const { items, options } = await load();
 
-	const { directories } = await prompts(
-		{
-			type: 'multiselect',
-			message: 'Select an bp item',
-			name: 'directories',
-			choices,
-		},
-		{ onCancel },
-	);
+	const directories = await multiselect({
+		message: 'Select an bp item',
+		options,
+	});
+
+	handleCancel(directories);
 
 	for (const dir of directories) {
 		console.log();

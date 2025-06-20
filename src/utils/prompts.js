@@ -1,5 +1,12 @@
-import prompts from 'prompts';
+import { confirm, isCancel } from '@clack/prompts';
 import pc from 'picocolors';
+
+/** @type {import('./prompts.js').handleCancel} */
+export function handleCancel(result) {
+	if (isCancel(result)) {
+		onCancel();
+	}
+}
 
 export function onCancel() {
 	console.log();
@@ -13,15 +20,12 @@ export function onCancel() {
  * @param {boolean=} dir
  */
 export async function checkForce(file, dir = false) {
-	const message = `Is it ok to ${pc.red('OVERWRITE')} ${
-		dir ? 'some files in' : ''
-	} ${file}`;
+	// prettier-ignore
+	const message = `Is it ok to ${pc.red('OVERWRITE')} ${dir ? 'some files in ' : ''}${file}`;
 
-	const { check } = await prompts({
-		type: 'confirm',
-		name: 'check',
+	const value = await confirm({
 		message,
 	});
 
-	if (!check) onCancel();
+	handleCancel(value);
 }
