@@ -1,8 +1,8 @@
 #!/usr/bin/env node
+import { dim, green, bold, blue, reset } from 'picocolors';
 import { checkForUpdate } from './utils/version.js';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import pc from 'picocolors';
 import sade from 'sade';
 
 import { run as boilerplateCommand } from './commands/boilerplate/bp.js';
@@ -37,13 +37,12 @@ program
 const update = await checkForUpdate(pkg.version);
 
 console.log(
-	pc.dim(`  v${pkg.version}`),
+	dim(`  v${pkg.version}`),
 	update?.available
-		? // prettier-ignore
-			`=> ${pc.reset(pc.green(`v${update.version}`))} ${pc.dim('(Update Available)')}`
+		? `=> ${reset(green(`v${update.version}`))} ${dim('(Update Available)')}`
 		: '',
 );
 
-console.log(`  ${pc.bold(pc.blue('create-ghost'))}\n`);
+console.log(`  ${bold(blue('create-ghost'))}\n`);
 
 program.parse(process.argv);

@@ -5,7 +5,7 @@ import { select, text, group } from '@clack/prompts';
 import { copy } from '../../utils/copy.js';
 import { join, resolve } from 'node:path';
 import type { Handler } from 'sade';
-import pc from 'picocolors';
+import { gray } from 'picocolors';
 
 async function loadTemplates() {
 	const path = join(import.meta.dirname, './templates');
@@ -55,7 +55,5 @@ export const run: Handler = async ({ force }) => {
 
 	await copy(template, outPath);
 
-	console.log(
-		`${logSymbols.success} Created a folder called ${pc.gray(out)}`,
-	);
+	console.log(`${logSymbols.success} Created a folder called ${gray(out)}`);
 };

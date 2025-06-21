@@ -1,5 +1,5 @@
 import { confirm, isCancel } from '@clack/prompts';
-import pc from 'picocolors';
+import { bold, red, blue, dim } from 'picocolors';
 
 export function handleCancel<T>(
 	result: T,
@@ -12,13 +12,13 @@ export function handleCancel<T>(
 export function onCancel() {
 	console.log();
 	// prettier-ignore
-	console.log(`  ${pc.bold(pc.red('Exited'))} ${pc.blue(pc.dim('create-ghost'))}`);
+	console.log(`  ${bold(red('Exited'))} ${blue(dim('create-ghost'))}`);
 	process.exit(0);
 }
 
 export async function checkForce(file: string, dir = false) {
 	// prettier-ignore
-	const message = `Is it ok to ${pc.red('OVERWRITE')} ${dir ? 'some files in ' : ''}${file}`;
+	const message = `Is it ok to ${red('OVERWRITE')} ${dir ? 'some files in ' : ''}${file}`;
 
 	const value = await confirm({
 		message,

@@ -6,7 +6,7 @@ import { dirname, join, resolve } from 'node:path';
 import { multiselect } from '@clack/prompts';
 import { copy } from '../../utils/copy.js';
 import type { Handler } from 'sade';
-import pc from 'picocolors';
+import { green } from 'picocolors';
 import exec from 'nanoexec';
 
 async function load() {
@@ -86,5 +86,5 @@ export const run: Handler = async ({ force }) => {
 	}
 
 	console.log();
-	console.log(`${logSymbols.success} ${pc.green('Done')}`);
+	console.log(`${logSymbols.success} ${green('Done')}`);
 };

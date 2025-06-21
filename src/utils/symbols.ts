@@ -1,5 +1,5 @@
+import { blue, green, yellow, red } from 'picocolors';
 import process from 'node:process';
-import pc from 'picocolors';
 
 /**
  * Check if unicode is supported on the current system.
@@ -28,14 +28,14 @@ function isUnicodeSupported(): boolean {
 // https://www.npmjs.com/package/log-symbols
 export const logSymbols = isUnicodeSupported()
 	? {
-			info: pc.blue('ℹ'),
-			success: pc.green('✔'),
-			warning: pc.yellow('⚠'),
-			error: pc.red('✖'),
+			info: blue('ℹ'),
+			success: green('✔'),
+			warning: yellow('⚠'),
+			error: red('✖'),
 		}
 	: {
-			info: pc.blue('i'),
-			success: pc.green('√'),
-			warning: pc.yellow('‼'),
-			error: pc.red('×'),
+			info: blue('i'),
+			success: green('√'),
+			warning: yellow('‼'),
+			error: red('×'),
 		};

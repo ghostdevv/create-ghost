@@ -27,17 +27,15 @@
 		"release": "changelogen --release",
 		"build": "tsdown"
 	},
-	"dependencies": {
-		"nanoexec": "^1.1.0",
-		"picocolors": "^1.1.1",
-		"sade": "^1.8.1"
-	},
 	"devDependencies": {
 		"@biomejs/biome": "2.0.0",
 		"@clack/prompts": "^0.11.0",
 		"@types/node": "^20.17.19",
 		"changelogen": "^0.5.7",
+		"nanoexec": "^1.1.0",
+		"picocolors": "^1.1.1",
 		"prettier": "^3.5.2",
+		"sade": "^1.8.1",
 		"taze": "^0.17.2",
 		"tsdown": "^0.12.8",
 		"typescript": "^5.6.3"
