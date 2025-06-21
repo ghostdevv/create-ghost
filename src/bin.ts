@@ -1,19 +1,15 @@
 #!/usr/bin/env node
+import { version } from '../package.json' with { type: 'json' };
 import { dim, green, bold, blue, reset } from 'picocolors';
 import { checkForUpdate } from './utils/version.js';
-import { readFileSync } from 'node:fs';
-import { join } from 'node:path';
 import sade from 'sade';
 
 import { run as boilerplateCommand } from './commands/boilerplate/bp.js';
 import { run as createCommand } from './commands/create/create.js';
 
-const pkgPath = join(import.meta.dirname, '../package.json');
-const pkg = JSON.parse(readFileSync(pkgPath, 'utf-8'));
-
 const program = sade('create-ghost');
 
-program.version(pkg.version);
+program.version(version);
 
 program
 	.command('bp')
