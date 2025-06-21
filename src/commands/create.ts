@@ -1,13 +1,13 @@
 import { existsSync, statSync, rmSync, readdirSync } from 'node:fs';
-import { checkForce, onCancel } from '../../utils/prompts.js';
+import { checkForce, onCancel } from '../utils/prompts.js';
 import { select, text, group, log } from '@clack/prompts';
-import { copy } from '../../utils/copy.js';
 import { join, resolve } from 'node:path';
+import { copy } from '../utils/copy.js';
 import type { Handler } from 'sade';
 import { gray } from 'picocolors';
 
 async function loadTemplates() {
-	const path = join(import.meta.dirname, './templates');
+	const path = join(import.meta.env.FILES_DIR, './templates');
 	const dirs = readdirSync(path);
 
 	return dirs.map((name) => ({

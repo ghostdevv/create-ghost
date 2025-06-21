@@ -5,8 +5,8 @@ import { checkForUpdate } from './utils/version.js';
 import { intro, outro } from '@clack/prompts';
 import sade from 'sade';
 
-import { run as boilerplateCommand } from './commands/boilerplate/bp.js';
-import { run as createCommand } from './commands/create/create.js';
+import { run as boilerplateCommand } from './commands/bp.js';
+import { run as createCommand } from './commands/create.js';
 
 const program = sade('create-ghost');
 

@@ -21,7 +21,7 @@
 		"url": "https://github.com/ghostdevv/create-ghost/issues"
 	},
 	"scripts": {
-		"update-templates": "taze --cwd src/commands/create/templates --recursive --write",
+		"update-templates": "taze --cwd files/templates --recursive --write",
 		"check": "tsc --noEmit && biome check . && prettier --check .",
 		"fix": "biome check . --fix && prettier --write .",
 		"release": "changelogen --release",

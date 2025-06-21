@@ -7,11 +7,7 @@
 	},
 	"files": {
 		"ignoreUnknown": true,
-		"includes": [
-			"**",
-			"!src/commands/create/templates",
-			"!src/commands/boilerplate/items"
-		]
+		"includes": ["src/**"]
 	},
 	"formatter": {
 		"enabled": false
