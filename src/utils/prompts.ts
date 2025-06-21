@@ -1,8 +1,9 @@
 import { confirm, isCancel } from '@clack/prompts';
 import pc from 'picocolors';
 
-/** @type {import('./prompts.js').handleCancel} */
-export function handleCancel(result) {
+export function handleCancel<T>(
+	result: T,
+): asserts result is Exclude<T, symbol> {
 	if (isCancel(result)) {
 		onCancel();
 	}
@@ -15,11 +16,7 @@ export function onCancel() {
 	process.exit(0);
 }
 
-/**
- * @param {string} file
- * @param {boolean=} dir
- */
-export async function checkForce(file, dir = false) {
+export async function checkForce(file: string, dir = false) {
 	// prettier-ignore
 	const message = `Is it ok to ${pc.red('OVERWRITE')} ${dir ? 'some files in ' : ''}${file}`;
 

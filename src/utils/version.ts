@@ -1,19 +1,16 @@
 /**
  * Check whether an update is available
- * @param {string} currentVersion
  */
-export async function checkForUpdate(currentVersion) {
+export async function checkForUpdate(currentVersion: string) {
 	try {
 		const res = await fetch('https://npm.antfu.dev/create-ghost');
-
-		/** @type {{ version: string; }} */
-		const { version } = await res.json();
+		const { version }: { version: string } = await res.json();
 
 		return {
 			available: compare(version, currentVersion) === 1,
 			version,
 		};
-	} catch (e) {
+	} catch {
 		return null;
 	}
 }
@@ -23,11 +20,8 @@ export async function checkForUpdate(currentVersion) {
  *
  * Based on MIT Licenced code from semver-compare
  * https://www.npmjs.com/package/semver-compare
- * @param {string} a
- * @param {string} b
- * @returns
  */
-function compare(a, b) {
+function compare(a: string, b: string) {
 	const pa = a.split('.');
 	const pb = b.split('.');
 

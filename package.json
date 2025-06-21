@@ -3,13 +3,12 @@
 	"version": "1.17.0",
 	"type": "module",
 	"files": [
-		"src",
-		"LICENSE",
-		"README.md"
+		"dist",
+		"LICENSE"
 	],
 	"bin": {
-		"create-ghost": "./src/bin.js",
-		"ghost": "./src/bin.js"
+		"create-ghost": "./dist/bin.js",
+		"ghost": "./dist/bin.js"
 	},
 	"repository": {
 		"type": "git",
@@ -23,9 +22,10 @@
 	},
 	"scripts": {
 		"update-templates": "taze --cwd src/commands/create/templates --recursive --write",
-		"check": "tsc --noEmit --project jsconfig.json && biome check . && prettier --check .",
+		"check": "tsc --noEmit && biome check . && prettier --check .",
 		"fix": "biome check . --fix && prettier --write .",
-		"release": "changelogen --release"
+		"release": "changelogen --release",
+		"build": "tsdown"
 	},
 	"dependencies": {
 		"nanoexec": "^1.1.0",
@@ -39,6 +39,7 @@
 		"changelogen": "^0.5.7",
 		"prettier": "^3.5.2",
 		"taze": "^0.17.2",
+		"tsdown": "^0.12.8",
 		"typescript": "^5.6.3"
 	},
 	"packageManager": "pnpm@9.14.2",

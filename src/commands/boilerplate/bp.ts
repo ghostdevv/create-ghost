@@ -5,6 +5,7 @@ import { logSymbols } from '../../utils/symbols.js';
 import { dirname, join, resolve } from 'node:path';
 import { multiselect } from '@clack/prompts';
 import { copy } from '../../utils/copy.js';
+import type { Handler } from 'sade';
 import pc from 'picocolors';
 import exec from 'nanoexec';
 
@@ -28,8 +29,7 @@ async function load() {
 	return { items, options };
 }
 
-/** @type {import('sade').Handler} */
-export const run = async ({ force }) => {
+export const run: Handler = async ({ force }) => {
 	const { items, options } = await load();
 
 	const directories = await multiselect({

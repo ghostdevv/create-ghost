@@ -4,6 +4,7 @@ import { logSymbols } from '../../utils/symbols.js';
 import { select, text, group } from '@clack/prompts';
 import { copy } from '../../utils/copy.js';
 import { join, resolve } from 'node:path';
+import type { Handler } from 'sade';
 import pc from 'picocolors';
 
 async function loadTemplates() {
@@ -19,8 +20,7 @@ async function loadTemplates() {
 	}));
 }
 
-/** @type {import('sade').Handler} */
-export const run = async ({ force }) => {
+export const run: Handler = async ({ force }) => {
 	const templates = await loadTemplates();
 
 	const { template, out } = await group(

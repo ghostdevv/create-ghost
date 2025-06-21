@@ -4,10 +4,8 @@ import { join } from 'node:path';
 /**
  * Copy a directory to a new location.
  * Files that bein with _ will have it replaced with a period.
- * @param {string} from
- * @param {string} to
  */
-export async function copy(from, to) {
+export async function copy(from: string, to: string) {
 	await cp(from, to, { recursive: true });
 
 	const files = await readdir(to, {

@@ -1,7 +1,6 @@
 {
 	"compilerOptions": {
-		"allowJs": true,
-		"checkJs": true,
+		"allowJs": false,
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
 		"resolveJsonModule": true,
@@ -10,8 +9,9 @@
 		"strict": true,
 		"moduleResolution": "NodeNext",
 		"module": "NodeNext",
-		"target": "ESNext"
+		"target": "ESNext",
+		"verbatimModuleSyntax": true
 	},
-	"include": ["src/**/*.js", "src/**/*.ts"],
+	"include": ["src/**/*.ts"],
 	"exclude": ["node_modules/**", "src/commands/create/templates/**"]
 }

@@ -6,9 +6,8 @@ import pc from 'picocolors';
  *
  * Based on MIT Licenced code from is-unicode-supported
  * https://www.npmjs.com/package/is-unicode-supported
- * @returns {boolean}
  */
-function isUnicodeSupported() {
+function isUnicodeSupported(): boolean {
 	if (process.platform !== 'win32') {
 		return process.env.TERM !== 'linux'; // Linux console (kernel)
 	}
