@@ -1,5 +1,31 @@
 # Changelog
 
+## v1.18.0
+
+[compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.17.0...v1.18.0)
+
+### 🚀 Enhancements
+
+- Move to typescript ([243af48](https://github.com/ghostdevv/create-ghost/commit/243af48))
+- Inline all deps and slightly reduce bundle ([e029f33](https://github.com/ghostdevv/create-ghost/commit/e029f33))
+- Inline version for slight speed bump ([f167b98](https://github.com/ghostdevv/create-ghost/commit/f167b98))
+- Better clack integration ([502b0b1](https://github.com/ghostdevv/create-ghost/commit/502b0b1))
+- Update template deps ([612af84](https://github.com/ghostdevv/create-ghost/commit/612af84))
+
+### 💅 Refactors
+
+- Move files dir ([9e9ae3e](https://github.com/ghostdevv/create-ghost/commit/9e9ae3e))
+
+### 🏡 Chore
+
+- Update changelog ([d96e13f](https://github.com/ghostdevv/create-ghost/commit/d96e13f))
+- Remove gitpod.yml ([343fdd0](https://github.com/ghostdevv/create-ghost/commit/343fdd0))
+- Re-exclude templates & bp items ([77db102](https://github.com/ghostdevv/create-ghost/commit/77db102))
+
+### ❤️ Contributors
+
+- GHOST ([@ghostdevv](http://github.com/ghostdevv))
+
 ## v1.17.0
 
 [compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.15.1...v1.17.0)
