@@ -13,5 +13,9 @@
 		"verbatimModuleSyntax": true
 	},
 	"include": ["src/**/*.ts"],
-	"exclude": ["node_modules/**", "src/commands/create/templates/**"]
+	"exclude": [
+		"node_modules/**",
+		"src/commands/create/templates/**",
+		"src/commands/boilerplate/items/**"
+	]
 }
