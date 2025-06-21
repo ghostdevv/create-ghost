@@ -2,6 +2,7 @@
 import { version } from '../package.json' with { type: 'json' };
 import { dim, green, bold, blue, reset } from 'picocolors';
 import { checkForUpdate } from './utils/version.js';
+import { intro, outro } from '@clack/prompts';
 import sade from 'sade';
 
 import { run as boilerplateCommand } from './commands/boilerplate/bp.js';
@@ -30,15 +31,11 @@ program
 	.option('-f, --force', 'Skip the confirmation for overwriting files', false)
 	.action(createCommand);
 
-const update = await checkForUpdate(pkg.version);
+const update = await checkForUpdate(version);
 
-console.log(
-	dim(`  v${pkg.version}`),
-	update?.available
-		? `=> ${reset(green(`v${update.version}`))} ${dim('(Update Available)')}`
-		: '',
-);
+// prettier-ignore
+intro(`${bold(blue('create-ghost'))} ${dim(`v${version}`)} ${update?.available ? `=> ${reset(green(`v${update.version}`))} ${dim('(Update Available)')}`: ''}`);
 
-console.log(`  ${bold(blue('create-ghost'))}\n`);
+await (program.parse(process.argv) as unknown as Promise<void>);
 
-program.parse(process.argv);
+outro('(☆•ー•☆)');

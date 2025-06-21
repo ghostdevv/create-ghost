@@ -1,7 +1,6 @@
 import { existsSync, statSync, rmSync, readdirSync } from 'node:fs';
 import { checkForce, onCancel } from '../../utils/prompts.js';
-import { logSymbols } from '../../utils/symbols.js';
-import { select, text, group } from '@clack/prompts';
+import { select, text, group, log } from '@clack/prompts';
 import { copy } from '../../utils/copy.js';
 import { join, resolve } from 'node:path';
 import type { Handler } from 'sade';
@@ -55,5 +54,5 @@ export const run: Handler = async ({ force }) => {
 
 	await copy(template, outPath);
 
-	console.log(`${logSymbols.success} Created a folder called ${gray(out)}`);
+	log.success(`Created a folder called ${gray(out)}`);
 };

@@ -1,9 +1,8 @@
 import { existsSync, readdirSync, mkdirSync, copyFileSync } from 'node:fs';
 import { checkForce, handleCancel } from '../../utils/prompts.js';
 import { readFile, writeFile } from 'node:fs/promises';
-import { logSymbols } from '../../utils/symbols.js';
 import { dirname, join, resolve } from 'node:path';
-import { multiselect } from '@clack/prompts';
+import { multiselect, log } from '@clack/prompts';
 import { copy } from '../../utils/copy.js';
 import type { Handler } from 'sade';
 import { green } from 'picocolors';
@@ -40,8 +39,6 @@ export const run: Handler = async ({ force }) => {
 	handleCancel(directories);
 
 	for (const dir of directories) {
-		console.log();
-
 		const item = items.get(dir);
 
 		if (item.file) {
@@ -85,6 +82,5 @@ export const run: Handler = async ({ force }) => {
 		}
 	}
 
-	console.log();
-	console.log(`${logSymbols.success} ${green('Done')}`);
+	log.success(green('Done'));
 };
