@@ -4,9 +4,6 @@ import { join } from 'node:path';
 
 export default defineConfig({
 	entry: 'src/bin.ts',
-	env: {
-		FILES_DIR: join(import.meta.dirname, './files'),
-	},
 	hooks: {
 		'build:done': async () => {
 			await cp(

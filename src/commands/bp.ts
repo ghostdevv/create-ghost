@@ -3,13 +3,14 @@ import { checkForce, handleCancel } from '../utils/prompts.js';
 import { readFile, writeFile } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
 import { multiselect, log } from '@clack/prompts';
+import { FILES_DIR } from '../utils/vars.js';
 import { copy } from '../utils/copy.js';
 import type { Handler } from 'sade';
 import { green } from 'picocolors';
 import exec from 'nanoexec';
 
 async function load() {
-	const itemsPath = join(import.meta.env.FILES_DIR, './items');
+	const itemsPath = join(FILES_DIR, './items');
 	const dirs = readdirSync(itemsPath);
 
 	const items = new Map();
