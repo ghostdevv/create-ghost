@@ -1,5 +1,17 @@
 # Changelog
 
+## v1.18.1
+
+[compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.18.0...v1.18.1)
+
+### 🩹 Fixes
+
+- Templates not able to be read ([8392366](https://github.com/ghostdevv/create-ghost/commit/8392366))
+
+### ❤️ Contributors
+
+- GHOST ([@ghostdevv](http://github.com/ghostdevv))
+
 ## v1.18.0
 
 [compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.17.0...v1.18.0)
