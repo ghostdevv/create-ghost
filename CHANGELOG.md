@@ -1,5 +1,17 @@
 # Changelog
 
+## v1.18.2
+
+[compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.18.1...v1.18.2)
+
+### 🏡 Chore
+
+- Update template deps ([e370691](https://github.com/ghostdevv/create-ghost/commit/e370691))
+
+### ❤️ Contributors
+
+- GHOST ([@ghostdevv](http://github.com/ghostdevv))
+
 ## v1.18.1
 
 [compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.18.0...v1.18.1)
