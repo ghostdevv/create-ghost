@@ -1,5 +1,19 @@
 # Changelog
 
+## v1.19.0
+
+[compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.18.2...v1.19.0)
+
+### 🚀 Enhancements
+
+- Update biome ([701045f](https://github.com/ghostdevv/create-ghost/commit/701045f))
+- Add lint action ([7d13c92](https://github.com/ghostdevv/create-ghost/commit/7d13c92))
+- Release action use pnpm cache and packageManager field for version ([7d2fc0c](https://github.com/ghostdevv/create-ghost/commit/7d2fc0c))
+
+### ❤️ Contributors
+
+- GHOST ([@ghostdevv](http://github.com/ghostdevv))
+
 ## v1.18.2
 
 [compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.18.1...v1.18.2)
