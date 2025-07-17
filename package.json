@@ -28,7 +28,7 @@
 		"build": "tsdown"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.0.0",
+		"@biomejs/biome": "2.1.2",
 		"@clack/prompts": "^0.11.0",
 		"@types/node": "^20.17.19",
 		"changelogen": "^0.5.7",
