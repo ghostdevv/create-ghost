@@ -1,5 +1,17 @@
 # Changelog
 
+## v1.19.1
+
+[compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.19.0...v1.19.1)
+
+### 🩹 Fixes
+
+- Lint workflow name ([931b9f3](https://github.com/ghostdevv/create-ghost/commit/931b9f3))
+
+### ❤️ Contributors
+
+- GHOST ([@ghostdevv](http://github.com/ghostdevv))
+
 ## v1.19.0
 
 [compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.18.2...v1.19.0)
