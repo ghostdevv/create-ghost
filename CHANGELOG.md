@@ -1,5 +1,17 @@
 # Changelog
 
+## v1.20.0
+
+[compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.19.1...v1.20.0)
+
+### 🚀 Enhancements
+
+- Update prettier config ([03b739c](https://github.com/ghostdevv/create-ghost/commit/03b739c))
+
+### ❤️ Contributors
+
+- GHOST ([@ghostdevv](http://github.com/ghostdevv))
+
 ## v1.19.1
 
 [compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.19.0...v1.19.1)
