@@ -12,7 +12,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/ghostdevv/create-ghost.git"
+		"url": "https://github.com/ghostdevv/create-ghost"
 	},
 	"homepage": "https://github.com/ghostdevv/create-ghost",
 	"author": "Willow GHOST <ghostdevbusiness@gmail.com> (https://ghostdev.xyz)",

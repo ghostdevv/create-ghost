@@ -2,13 +2,15 @@ name: Release Package
 
 on:
     release:
-        types: [created]
-
+        types:
+            - created
 jobs:
-    publish-npm:
+    release:
+        name: Release
         runs-on: ubuntu-latest
         permissions:
             id-token: write
+            contents: read
         steps:
             - name: Checkout
               uses: actions/checkout@v4
@@ -16,10 +18,10 @@ jobs:
             - name: Setup PNPM
               uses: pnpm/action-setup@v4.1.0
 
-            - name: Setup Node 22
+            - name: Setup Node 24
               uses: actions/setup-node@v4
               with:
-                  node-version: 22
+                  node-version: 24
                   registry-url: https://registry.npmjs.org/
                   cache: pnpm
 
@@ -30,9 +32,4 @@ jobs:
             #   run: pnpm build
 
             - name: Publish
-              run: |
-                  pnpm config set "//registry.npmjs.org/:_authToken" "${NPM_TOKEN}"
-                  pnpm publish --no-git-checks
-              env:
-                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-                  NPM_CONFIG_PROVENANCE: true
+              run: pnpm publish --no-git-checks
