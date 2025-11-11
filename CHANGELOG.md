@@ -1,5 +1,27 @@
 # Changelog
 
+## v1.21.0
+
+[compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.20.0...v1.21.0)
+
+### 🚀 Enhancements
+
+- Update changesets action ([f681fd0](https://github.com/ghostdevv/create-ghost/commit/f681fd0))
+
+### 🩹 Fixes
+
+- Update provenance setup ([b8b76ce](https://github.com/ghostdevv/create-ghost/commit/b8b76ce))
+- Support node 24 ([a6600a8](https://github.com/ghostdevv/create-ghost/commit/a6600a8))
+
+### 🏡 Chore
+
+- Update action ([ad84f70](https://github.com/ghostdevv/create-ghost/commit/ad84f70))
+- Update pnpm ([2e6b8f8](https://github.com/ghostdevv/create-ghost/commit/2e6b8f8))
+
+### ❤️ Contributors
+
+- Willow (GHOST) <git@willow.sh>
+
 ## v1.20.0
 
 [compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.19.1...v1.20.0)
