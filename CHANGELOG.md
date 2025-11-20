@@ -1,5 +1,21 @@
 # Changelog
 
+## v1.22.0
+
+[compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.21.0...v1.22.0)
+
+### 🚀 Enhancements
+
+- Configure zed in deno template ([91c70d2](https://github.com/ghostdevv/create-ghost/commit/91c70d2))
+
+### 🩹 Fixes
+
+- Add schema to deno.json ([e614b8e](https://github.com/ghostdevv/create-ghost/commit/e614b8e))
+
+### ❤️ Contributors
+
+- Willow (GHOST) <git@willow.sh>
+
 ## v1.21.0
 
 [compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.20.0...v1.21.0)
