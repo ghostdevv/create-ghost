@@ -7,9 +7,8 @@
 		"verbatimModuleSyntax": true,
 		"allowJs": true,
 		"checkJs": true,
-		"resolveJsonModule": true,
-		"types": ["@cloudflare/workers-types"]
+		"resolveJsonModule": true
 	},
-	"include": ["src/**.ts", "src/**.js"],
+	"include": ["src/**.ts", "src/**.js", "worker-configuration.d.ts"],
 	"exclude": ["node_modules/**"]
 }
