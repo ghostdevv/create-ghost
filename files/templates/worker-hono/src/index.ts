@@ -1,8 +1,8 @@
+import type { HonoEnv } from './types';
 import { logger } from 'hono/logger';
-import type { Env } from './types';
 import { Hono } from 'hono';
 
-const app = new Hono<Env>();
+const app = new Hono<HonoEnv>();
 
 app.use('*', logger());
 
