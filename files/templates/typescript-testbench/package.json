@@ -2,13 +2,16 @@
 	"name": "typescript-testbench",
 	"private": true,
 	"type": "module",
-	"main": "src/index.ts",
 	"scripts": {
-		"dev": "nodemon -e js,ts --loader tsm ."
+		"dev": "tsx --watch src/index.ts"
 	},
 	"devDependencies": {
-		"nodemon": "^2.0.22",
-		"tsm": "^2.3.0",
+		"tsx": "^4.20.6",
 		"typescript": "^5.9.3"
+	},
+	"pnpm": {
+		"onlyBuiltDependencies": [
+			"esbuild"
+		]
 	}
 }
