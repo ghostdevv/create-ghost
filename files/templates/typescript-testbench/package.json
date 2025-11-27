@@ -9,6 +9,6 @@
 	"devDependencies": {
 		"nodemon": "^2.0.22",
 		"tsm": "^2.3.0",
-		"typescript": "^5.8.3"
+		"typescript": "^5.9.3"
 	}
 }
