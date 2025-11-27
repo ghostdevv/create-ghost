@@ -61,6 +61,7 @@ export const run: Handler = async ({ force }) => {
 
 				const maybeYear = Number.parseInt(
 					gitResult.stdout.toString().trim().split('\n')[0],
+					10,
 				);
 
 				const year = Number.isNaN(maybeYear)

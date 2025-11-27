@@ -3,7 +3,6 @@
 Personal notes: internal pacakges should be scoped and have `private: true` in your package.json
 
 1. Update configs
-
     1. Add your License text to the `LICENSE` file. If you're unsure then checkout the [MIT license](https://choosealicense.com/licenses/mit/).
     2. Search and replace the template `REPO_NAME` with your username/repo. e.g. `ghostdevv/neru`
 
@@ -18,7 +17,6 @@ Personal notes: internal pacakges should be scoped and have `private: true` in y
     ![](https://i.imgur.com/hQqJtHF.png)
 
 4. Create & Save a `NPM_TOKEN`
-
     1. Visit [npm](https://www.npmjs.com) and navigate to "Access Tokens"
 
         ![](https://i.imgur.com/cJGMQ2c.png)
