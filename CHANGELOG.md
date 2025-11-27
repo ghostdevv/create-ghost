@@ -1,5 +1,28 @@
 # Changelog
 
+## v1.23.0
+
+[compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.22.0...v1.23.0)
+
+### 🚀 Enhancements
+
+- Update worker-simple template ([2cd85cd](https://github.com/ghostdevv/create-ghost/commit/2cd85cd))
+- Update worker-hono template ([4b598e0](https://github.com/ghostdevv/create-ghost/commit/4b598e0))
+- Update template deps ([9952efc](https://github.com/ghostdevv/create-ghost/commit/9952efc))
+- Update typescript testbench ([1fa3846](https://github.com/ghostdevv/create-ghost/commit/1fa3846))
+
+### 📦 Build
+
+- Update tsconfig ([ee3fa91](https://github.com/ghostdevv/create-ghost/commit/ee3fa91))
+
+### 🏡 Chore
+
+- Fmt ([a4b59d6](https://github.com/ghostdevv/create-ghost/commit/a4b59d6))
+
+### ❤️ Contributors
+
+- Willow (GHOST) <git@willow.sh>
+
 ## v1.22.0
 
 [compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.21.0...v1.22.0)
