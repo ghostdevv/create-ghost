@@ -4,6 +4,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
 import { multiselect, log } from '@clack/prompts';
 import { FILES_DIR } from '../utils/vars.js';
+import { pathToFileURL } from 'node:url';
 import { copy } from '../utils/copy.js';
 import type { Handler } from 'sade';
 import { green } from 'picocolors';
@@ -20,7 +21,9 @@ async function load() {
 		const itemPath = join(itemsPath, dir);
 		const metaPath = join(itemPath, 'meta.js');
 
-		const { default: meta } = await import(metaPath);
+		const { default: meta } = await import(
+			pathToFileURL(metaPath).toString()
+		);
 
 		items.set(itemPath, { ...meta, path: itemPath });
 		options.push({ label: meta.name, value: itemPath });
