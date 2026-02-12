@@ -1,5 +1,17 @@
 # Changelog
 
+## v1.23.1
+
+[compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.23.0...v1.23.1)
+
+### 🩹 Fixes
+
+- Maybe solve windows issue ([c5b51dc](https://github.com/ghostdevv/create-ghost/commit/c5b51dc))
+
+### ❤️ Contributors
+
+- Willow (GHOST) <git@willow.sh>
+
 ## v1.23.0
 
 [compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.22.0...v1.23.0)
