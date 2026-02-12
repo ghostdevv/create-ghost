@@ -28,16 +28,16 @@
 		"build": "tsdown"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.3.7",
-		"@clack/prompts": "^0.11.0",
+		"@biomejs/biome": "2.3.15",
+		"@clack/prompts": "^1.0.1",
 		"@types/node": "^20.17.19",
 		"changelogen": "^0.6.2",
 		"nanoexec": "^1.1.0",
 		"picocolors": "^1.1.1",
-		"prettier": "^3.6.2",
+		"prettier": "^3.8.1",
 		"sade": "^1.8.1",
-		"taze": "^19.9.0",
-		"tsdown": "^0.12.8",
+		"taze": "^19.9.2",
+		"tsdown": "^0.20.3",
 		"typescript": "^5.9.3"
 	},
 	"packageManager": "pnpm@10.21.0",
