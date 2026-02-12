@@ -1,5 +1,25 @@
 # Changelog
 
+## v1.24.0
+
+[compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.23.1...v1.24.0)
+
+### 🚀 Enhancements
+
+- Update template deps ([ac5b0fb](https://github.com/ghostdevv/create-ghost/commit/ac5b0fb))
+
+### 🩹 Fixes
+
+- Bump node slightly (shh) ([d6fcd15](https://github.com/ghostdevv/create-ghost/commit/d6fcd15))
+
+### 📦 Build
+
+- Fix warning/error ([39ec2a3](https://github.com/ghostdevv/create-ghost/commit/39ec2a3))
+
+### ❤️ Contributors
+
+- Willow (GHOST) <git@willow.sh>
+
 ## v1.23.1
 
 [compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.23.0...v1.23.1)
