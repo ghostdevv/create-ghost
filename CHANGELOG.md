@@ -1,5 +1,17 @@
 # Changelog
 
+## v1.24.1
+
+[compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.24.0...v1.24.1)
+
+### 🩹 Fixes
+
+- Build file extension was changed ([6e88783](https://github.com/ghostdevv/create-ghost/commit/6e88783))
+
+### ❤️ Contributors
+
+- Willow (GHOST) <git@willow.sh>
+
 ## v1.24.0
 
 [compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.23.1...v1.24.0)
