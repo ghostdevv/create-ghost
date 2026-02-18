@@ -7,8 +7,8 @@
 		"LICENSE"
 	],
 	"bin": {
-		"create-ghost": "./dist/bin.js",
-		"ghost": "./dist/bin.js"
+		"create-ghost": "./dist/bin.mjs",
+		"ghost": "./dist/bin.mjs"
 	},
 	"repository": {
 		"type": "git",
