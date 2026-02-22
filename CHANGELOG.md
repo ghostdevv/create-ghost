@@ -1,5 +1,17 @@
 # Changelog
 
+## v1.25.0
+
+[compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.24.1...v1.25.0)
+
+### 🚀 Enhancements
+
+- Actions should pin the commits of the tags ([a29915d](https://github.com/ghostdevv/create-ghost/commit/a29915d))
+
+### ❤️ Contributors
+
+- Willow (GHOST) <git@willow.sh>
+
 ## v1.24.1
 
 [compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.24.0...v1.24.1)
