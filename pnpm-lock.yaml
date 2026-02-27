@@ -20,9 +20,6 @@ importers:
       changelogen:
         specifier: ^0.6.2
         version: 0.6.2
-      nanoexec:
-        specifier: ^1.1.0
-        version: 1.1.0(@types/node@20.19.33)
       picocolors:
         specifier: ^1.1.1
         version: 1.1.1
@@ -35,6 +32,9 @@ importers:
       taze:
         specifier: ^19.9.2
         version: 19.9.2
+      tinyexec:
+        specifier: ^1.0.2
+        version: 1.0.2
       tsdown:
         specifier: ^0.20.3
         version: 0.20.3(typescript@5.9.3)
@@ -405,11 +405,6 @@ packages:
     resolution: {integrity: sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==}
     engines: {node: '>=4'}
 
-  nanoexec@1.1.0:
-    resolution: {integrity: sha512-AFEBFWI+4vgstL3Czpbn8yCKBgN+b2d0qPdBCjmrOf9OOUUpLqBr+JocLJCfA5OYxKSmoOdEm6OWO5QraTNtDg==}
-    peerDependencies:
-      '@types/node': '*'
-
   node-fetch-native@1.6.7:
     resolution: {integrity: sha512-g9yhqoedzIUm0nTnTqAQvueMPVOuIY16bqgAJJC8XOOubYFNwz6IER9qs0Gq2Xd0+CecCKFjtdDTMA4u4xG06Q==}
 
@@ -461,9 +456,6 @@ packages:
     resolution: {integrity: sha512-UOnG6LftzbdaHZcKoPFtOcCKztrQ57WkHDeRD9t/PTQtmT0NHSeWWepj6pS0z/N7+08BHFDQVUrfmfMRcZwbMg==}
     engines: {node: '>=14'}
     hasBin: true
-
-  promise-make-naked@3.0.2:
-    resolution: {integrity: sha512-B+b+kQ1YrYS7zO7P7bQcoqqMUizP06BOyNSBEnB5VJKDSWo8fsVuDkfSmwdjF0JsRtaNh83so5MMFJ95soH5jg==}
 
   quansync@1.0.0:
     resolution: {integrity: sha512-5xZacEEufv3HSTPQuchrvV6soaiACMFnq1H8wkVioctoH3TRha9Sz66lOxRwPK/qZj7HPiSveih9yAyh98gvqA==}
@@ -922,11 +914,6 @@ snapshots:
 
   mri@1.2.0: {}
 
-  nanoexec@1.1.0(@types/node@20.19.33):
-    dependencies:
-      '@types/node': 20.19.33
-      promise-make-naked: 3.0.2
-
   node-fetch-native@1.6.7: {}
 
   nypm@0.6.5:
@@ -977,8 +964,6 @@ snapshots:
       yaml: 2.8.2
 
   prettier@3.8.1: {}
-
-  promise-make-naked@3.0.2: {}
 
   quansync@1.0.0: {}
 

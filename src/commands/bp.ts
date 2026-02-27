@@ -8,7 +8,7 @@ import { pathToFileURL } from 'node:url';
 import { copy } from '../utils/copy.js';
 import type { Handler } from 'sade';
 import { green } from 'picocolors';
-import exec from 'nanoexec';
+import { exec } from 'tinyexec';
 
 async function load() {
 	const itemsPath = join(FILES_DIR, './items');
@@ -56,11 +56,12 @@ export const run: Handler = async ({ force }) => {
 
 			// todo add proper hooks
 			if (item.file == 'LICENSE') {
-				const gitResult = await exec(
-					'git',
-					['log', '--reverse', '--format=%cd', '--date=format:%Y'],
-					{ shell: true },
-				);
+				const gitResult = await exec('git', [
+					'log',
+					'--reverse',
+					'--format=%cd',
+					'--date=format:%Y',
+				]);
 
 				const maybeYear = Number.parseInt(
 					gitResult.stdout.toString().trim().split('\n')[0],
