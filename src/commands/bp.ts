@@ -1,4 +1,5 @@
 import { existsSync, readdirSync, mkdirSync, copyFileSync } from 'node:fs';
+import { addDependencies, type Dependency } from '../utils/dependencies';
 import { checkForce, handleCancel } from '../utils/prompts.js';
 import { readFile, writeFile } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
@@ -10,11 +11,19 @@ import type { Handler } from 'sade';
 import { green } from 'picocolors';
 import { exec } from 'tinyexec';
 
+interface BpItemMeta {
+	name: string;
+	file?: string;
+	dir?: string;
+	out: string;
+	dependencies?: Dependency[];
+}
+
 async function load() {
 	const itemsPath = join(FILES_DIR, './items');
 	const dirs = readdirSync(itemsPath);
 
-	const items = new Map();
+	const items = new Map<string, BpItemMeta & { path: string }>();
 	const options = [];
 
 	for (const dir of dirs) {
@@ -44,6 +53,7 @@ export const run: Handler = async ({ force }) => {
 
 	for (const dir of directories) {
 		const item = items.get(dir);
+		if (!item) continue;
 
 		if (item.file) {
 			const file = join(item.path, item.file);
@@ -77,7 +87,7 @@ export const run: Handler = async ({ force }) => {
 				await writeFile(out, contents, 'utf-8');
 			}
 		} else {
-			const dir = join(item.path, item.dir);
+			const dir = join(item.path, item.dir!);
 			const out = resolve(item.out);
 
 			const exists = existsSync(out);
@@ -86,6 +96,20 @@ export const run: Handler = async ({ force }) => {
 
 			await copy(dir, out);
 		}
+	}
+
+	const deps = new Map<string, Dependency>();
+
+	for (const dir of directories) {
+		const item = items.get(dir);
+		if (!item?.dependencies) continue;
+		for (const dep of item.dependencies) {
+			deps.set(dep.specifier, dep);
+		}
+	}
+
+	if (deps.size > 0) {
+		await addDependencies(process.cwd(), Array.from(deps.values()), true);
 	}
 
 	log.success(green('Done'));
