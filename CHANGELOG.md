@@ -1,5 +1,19 @@
 # Changelog
 
+## v1.26.0
+
+[compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.25.0...v1.26.0)
+
+### 🚀 Enhancements
+
+- Update changesets template config ([53f4ef4](https://github.com/ghostdevv/create-ghost/commit/53f4ef4))
+- Add typescript project template ([cb597d1](https://github.com/ghostdevv/create-ghost/commit/cb597d1))
+- Add oxlint bp item ([3dd81f4](https://github.com/ghostdevv/create-ghost/commit/3dd81f4))
+
+### ❤️ Contributors
+
+- Willow (GHOST) <git@willow.sh>
+
 ## v1.25.0
 
 [compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.24.1...v1.25.0)
