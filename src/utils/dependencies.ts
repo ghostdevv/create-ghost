@@ -10,16 +10,13 @@ export interface Dependency {
 // Based on MIT Licensed code from Svelte CLI Contributors
 // https://github.com/sveltejs/cli/blob/9cbf5199c30618d53573c3de8fe08f031f60a125/LICENSE
 // https://github.com/sveltejs/cli/blob/9cbf5199c30618d53573c3de8fe08f031f60a125/packages/sv/src/core/package-manager.ts#L52-L79
-async function install(cwd: string, dev: boolean, deps: string[]) {
+async function pnpm(cwd: string, title: string, args: string[]) {
 	const task = taskLog({
-		title: `Installing ${deps.join(', ')}`,
 		limit: Math.ceil(process.stdout.rows / 2),
 		retainLog: true,
 		spacing: 0,
+		title,
 	});
-
-	const args = ['add', ...deps];
-	if (dev) args.splice(1, 0, '-D');
 
 	try {
 		const proc = exec('pnpm', args, {
@@ -31,11 +28,25 @@ async function install(cwd: string, dev: boolean, deps: string[]) {
 			task.message(line);
 		}
 
-		task.success('Installed');
+		task.success('pnpm was successful');
 	} catch {
 		task.error('Failed');
 		process.exit(1);
 	}
+}
+
+export async function installDependencies(cwd: string) {
+	const confirmation = await confirm({
+		message: 'Would you like to install dependencies?',
+	});
+
+	handleCancel(confirmation);
+
+	if (!confirmation) {
+		return;
+	}
+
+	await pnpm(cwd, 'Installing dependencies', ['install', '--offline']);
 }
 
 /**
@@ -91,10 +102,14 @@ export async function addDependencies(
 	}
 
 	if (prod.length > 0) {
-		await install(cwd, false, prod);
+		await pnpm(cwd, `Installing ${prod.join(', ')}`, ['add', ...prod]);
 	}
 
 	if (dev.length > 0) {
-		await install(cwd, true, dev);
+		await pnpm(cwd, `Installing dev ${dev.join(', ')}`, [
+			'add',
+			'-D',
+			...dev,
+		]);
 	}
 }

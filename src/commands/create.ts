@@ -1,4 +1,5 @@
 import { existsSync, statSync, rmSync, readdirSync } from 'node:fs';
+import { installDependencies } from '../utils/dependencies';
 import { checkForce, onCancel } from '../utils/prompts.js';
 import { select, text, group, log } from '@clack/prompts';
 import { FILES_DIR } from '../utils/vars.js';
@@ -54,6 +55,8 @@ export const run: Handler = async ({ force }) => {
 	}
 
 	await copy(template, outPath);
+
+	await installDependencies(outPath);
 
 	log.success(`Created a folder called ${gray(out)}`);
 };
