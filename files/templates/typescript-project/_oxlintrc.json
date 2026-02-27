@@ -1,0 +1,8 @@
+{
+	"$schema": "./node_modules/oxlint/configuration_schema.json",
+	"extends": [
+		"./node_modules/@rlly/pedantic/oxlint/core.json",
+		"./node_modules/@rlly/pedantic/oxlint/e18e.json",
+		"./node_modules/@rlly/pedantic/oxlint/type-aware.json"
+	]
+}
