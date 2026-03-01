@@ -1,5 +1,22 @@
 # Changelog
 
+## v1.27.0
+
+[compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.26.0...v1.27.0)
+
+### 🚀 Enhancements
+
+- Bp items can install deps ([1eeec20](https://github.com/ghostdevv/create-ghost/commit/1eeec20))
+- Create can optionally install deps ([62c8250](https://github.com/ghostdevv/create-ghost/commit/62c8250))
+
+### 💅 Refactors
+
+- Switch to tinyexec ([a4c24bc](https://github.com/ghostdevv/create-ghost/commit/a4c24bc))
+
+### ❤️ Contributors
+
+- Willow (GHOST) <git@willow.sh>
+
 ## v1.26.0
 
 [compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.25.0...v1.26.0)
