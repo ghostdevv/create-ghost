@@ -46,7 +46,7 @@ export async function installDependencies(cwd: string) {
 		return;
 	}
 
-	await pnpm(cwd, 'Installing dependencies', ['install', '--offline']);
+	await pnpm(cwd, 'Installing dependencies', ['install', '--prefer-offline']);
 }
 
 /**
