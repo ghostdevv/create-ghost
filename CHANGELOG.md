@@ -1,5 +1,28 @@
 # Changelog
 
+## v1.28.0
+
+[compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.27.0...v1.28.0)
+
+### 🚀 Enhancements
+
+- Update license email ([10899f0](https://github.com/ghostdevv/create-ghost/commit/10899f0))
+- Partially update template deps ([dc06ef5](https://github.com/ghostdevv/create-ghost/commit/dc06ef5))
+
+### 🩹 Fixes
+
+- Use prefer offline for downloading ([a1d278c](https://github.com/ghostdevv/create-ghost/commit/a1d278c))
+- Selectable dependency installing should be optional ([910d822](https://github.com/ghostdevv/create-ghost/commit/910d822))
+- Don't bundle dependencies ([62c1271](https://github.com/ghostdevv/create-ghost/commit/62c1271))
+
+### 🏡 Chore
+
+- Update website url ([6851b54](https://github.com/ghostdevv/create-ghost/commit/6851b54))
+
+### ❤️ Contributors
+
+- Willow (GHOST) <git@willow.sh>
+
 ## v1.27.0
 
 [compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.26.0...v1.27.0)
