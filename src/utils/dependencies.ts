@@ -64,6 +64,7 @@ export async function addDependencies(
 	if (askIndividually) {
 		const selectedDeps = await multiselect({
 			message: 'Select dependencies to install',
+			required: false,
 			options: deps.map((dep) => ({
 				label: dep.dev ? `${dep.specifier} (dev)` : dep.specifier,
 				value: dep,
@@ -88,6 +89,10 @@ export async function addDependencies(
 		if (!confirmation) {
 			return;
 		}
+	}
+
+	if (deps.length === 0) {
+		return;
 	}
 
 	const prod: string[] = [];
