@@ -4,7 +4,6 @@ import { join } from 'node:path';
 
 export default defineConfig({
 	entry: 'src/bin.ts',
-	inlineOnly: false,
 	hooks: {
 		'build:done': async () => {
 			await cp(
