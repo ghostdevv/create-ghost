@@ -7,8 +7,8 @@
 		"prepare": "wrangler types"
 	},
 	"devDependencies": {
-		"hono": "^4.11.9",
-		"wrangler": "^4.65.0"
+		"hono": "^4.12.18",
+		"wrangler": "^4.90.0"
 	},
 	"pnpm": {
 		"onlyBuiltDependencies": [
