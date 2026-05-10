@@ -1,5 +1,18 @@
 # Changelog
 
+## v1.28.1
+
+[compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.28.0...v1.28.1)
+
+### 🩹 Fixes
+
+- Picocolors imports ([85f62a2](https://github.com/ghostdevv/create-ghost/commit/85f62a2))
+- Support deno when installing dependencies ([d38383c](https://github.com/ghostdevv/create-ghost/commit/d38383c))
+
+### ❤️ Contributors
+
+- Willow (GHOST) <git@willow.sh>
+
 ## v1.28.0
 
 [compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.27.0...v1.28.0)
