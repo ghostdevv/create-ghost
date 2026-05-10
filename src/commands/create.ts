@@ -6,7 +6,7 @@ import { FILES_DIR } from '../utils/vars.js';
 import { join, resolve } from 'node:path';
 import { copy } from '../utils/copy.js';
 import type { Handler } from 'sade';
-import { gray } from 'picocolors';
+import pc from 'picocolors';
 
 async function loadTemplates() {
 	const path = join(FILES_DIR, './templates');
@@ -58,5 +58,5 @@ export const run: Handler = async ({ force }) => {
 
 	await installDependencies(outPath);
 
-	log.success(`Created a folder called ${gray(out)}`);
+	log.success(`Created a folder called ${pc.gray(out)}`);
 };

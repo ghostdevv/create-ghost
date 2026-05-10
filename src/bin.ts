@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 import { version } from '../package.json' with { type: 'json' };
-import { dim, green, bold, blue, reset } from 'picocolors';
 import { checkForUpdate } from './utils/version.js';
 import { intro, outro } from '@clack/prompts';
+import pc from 'picocolors';
 import sade from 'sade';
 
 import { run as boilerplateCommand } from './commands/bp.js';
@@ -34,7 +34,7 @@ program
 const update = await checkForUpdate(version);
 
 // prettier-ignore
-intro(`${bold(blue('create-ghost'))} ${dim(`v${version}`)} ${update?.available ? `=> ${reset(green(`v${update.version}`))} ${dim('(Update Available)')}`: ''}`);
+intro(`${pc.bold(pc.blue('create-ghost'))} ${pc.dim(`v${version}`)} ${update?.available ? `=> ${pc.reset(pc.green(`v${update.version}`))} ${pc.dim('(Update Available)')}`: ''}`);
 
 await (program.parse(process.argv) as unknown as Promise<void>);
 

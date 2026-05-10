@@ -8,7 +8,7 @@ import { FILES_DIR } from '../utils/vars.js';
 import { pathToFileURL } from 'node:url';
 import { copy } from '../utils/copy.js';
 import type { Handler } from 'sade';
-import { green } from 'picocolors';
+import pc from 'picocolors';
 import { exec } from 'tinyexec';
 
 interface BpItemMeta {
@@ -112,5 +112,5 @@ export const run: Handler = async ({ force }) => {
 		await addDependencies(process.cwd(), Array.from(deps.values()), true);
 	}
 
-	log.success(green('Done'));
+	log.success(pc.green('Done'));
 };
