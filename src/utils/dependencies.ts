@@ -1,26 +1,57 @@
-import { confirm, multiselect, taskLog } from '@clack/prompts';
+import { confirm, log, multiselect, taskLog } from '@clack/prompts';
 import { handleCancel } from './prompts';
+import { existsSync } from 'node:fs';
 import { exec } from 'tinyexec';
+import { join } from 'node:path';
 
 export interface Dependency {
 	specifier: string;
 	dev?: boolean;
 }
 
+type PackageManager = 'deno' | 'pnpm';
+
+const pmCache = new Map<string, PackageManager>();
+function getPackageManager(cwd: string): PackageManager {
+	const hit = pmCache.get(cwd);
+	if (hit) return hit;
+
+	if (
+		existsSync(join(cwd, './deno.json')) ||
+		existsSync(join(cwd, './deno.jsonc'))
+	) {
+		pmCache.set(cwd, 'deno');
+		return 'deno';
+	}
+
+	pmCache.set(cwd, 'pnpm');
+	return 'pnpm';
+}
+
+interface CommandOptions {
+	successMessage: string;
+	command: string;
+	args: string[];
+	title: string;
+	cwd: string;
+}
+
 // Based on MIT Licensed code from Svelte CLI Contributors
 // https://github.com/sveltejs/cli/blob/9cbf5199c30618d53573c3de8fe08f031f60a125/LICENSE
 // https://github.com/sveltejs/cli/blob/9cbf5199c30618d53573c3de8fe08f031f60a125/packages/sv/src/core/package-manager.ts#L52-L79
-async function pnpm(cwd: string, title: string, args: string[]) {
+async function runCommand(options: CommandOptions) {
+	log.info(`${options.command} ${options.args.join(' ')}`);
+
 	const task = taskLog({
 		limit: Math.ceil(process.stdout.rows / 2),
+		title: options.title,
 		retainLog: true,
 		spacing: 0,
-		title,
 	});
 
 	try {
-		const proc = exec('pnpm', args, {
-			nodeOptions: { cwd, stdio: 'pipe' },
+		const proc = exec(options.command, options.args, {
+			nodeOptions: { cwd: options.cwd, stdio: 'pipe' },
 			throwOnError: true,
 		});
 
@@ -28,11 +59,39 @@ async function pnpm(cwd: string, title: string, args: string[]) {
 			task.message(line);
 		}
 
-		task.success('pnpm was successful');
+		task.success(options.successMessage);
 	} catch {
 		task.error('Failed');
 		process.exit(1);
 	}
+}
+
+async function install(cwd: string) {
+	const pm = getPackageManager(cwd);
+
+	await runCommand({
+		cwd,
+		command: pm,
+		args: ['install', ...(pm === 'pnpm' ? ['--prefer-offline'] : [])],
+		title: `Installing dependencies with ${pm}`,
+		successMessage: 'Installed Successfully!',
+	});
+}
+
+async function add(cwd: string, dev: boolean, deps: string[]) {
+	const pm = getPackageManager(cwd);
+
+	await runCommand({
+		cwd,
+		command: pm,
+		args: [
+			'add',
+			...(dev ? ['-D'] : []),
+			...(pm === 'deno' ? deps.map((d) => `npm:${d}`) : deps),
+		],
+		title: `Adding${dev ? ' dev' : ''} ${deps.join(', ')}`,
+		successMessage: 'Added Successfully!',
+	});
 }
 
 export async function installDependencies(cwd: string) {
@@ -46,7 +105,7 @@ export async function installDependencies(cwd: string) {
 		return;
 	}
 
-	await pnpm(cwd, 'Installing dependencies', ['install', '--prefer-offline']);
+	await install(cwd);
 }
 
 /**
@@ -107,14 +166,10 @@ export async function addDependencies(
 	}
 
 	if (prod.length > 0) {
-		await pnpm(cwd, `Installing ${prod.join(', ')}`, ['add', ...prod]);
+		await add(cwd, false, prod);
 	}
 
 	if (dev.length > 0) {
-		await pnpm(cwd, `Installing dev ${dev.join(', ')}`, [
-			'add',
-			'-D',
-			...dev,
-		]);
+		await add(cwd, true, dev);
 	}
 }
