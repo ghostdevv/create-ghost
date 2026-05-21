@@ -8,11 +8,11 @@
 	},
 	"devDependencies": {
 		"typescript": "^5.9.3",
-		"wrangler": "^4.90.0"
+		"wrangler": "^4.93.0"
 	},
 	"packageManager": "pnpm@11.2.1",
 	"volta": {
-		"node": "24.14.0",
+		"node": "24.15.0",
 		"pnpm": "11.2.1"
 	}
 }

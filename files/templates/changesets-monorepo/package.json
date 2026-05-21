@@ -3,7 +3,7 @@
 	"private": true,
 	"license": "MIT",
 	"devDependencies": {
-		"@changesets/cli": "^2.29.5",
+		"@changesets/cli": "^2.31.0",
 		"@svitejs/changesets-changelog-github-compact": "^1.2.0"
 	},
 	"scripts": {
@@ -20,7 +20,7 @@
 	},
 	"packageManager": "pnpm@11.2.1",
 	"volta": {
-		"node": "24.14.0",
+		"node": "24.15.0",
 		"pnpm": "11.2.1"
 	}
 }
