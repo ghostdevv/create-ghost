@@ -1,5 +1,17 @@
 # Changelog
 
+## v1.30.1
+
+[compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.30.0...v1.30.1)
+
+### 🩹 Fixes
+
+- Test release ([f2b1252](https://github.com/ghostdevv/create-ghost/commit/f2b1252))
+
+### ❤️ Contributors
+
+- Willow (GHOST) <git@willow.sh>
+
 ## v1.30.0
 
 [compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.29.0...v1.30.0)
