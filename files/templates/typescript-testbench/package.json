@@ -9,9 +9,9 @@
 		"tsx": "^4.21.0",
 		"typescript": "^5.9.3"
 	},
-	"pnpm": {
-		"onlyBuiltDependencies": [
-			"esbuild"
-		]
+	"packageManager": "pnpm@11.2.1",
+	"volta": {
+		"node": "24.14.0",
+		"pnpm": "11.2.1"
 	}
 }
