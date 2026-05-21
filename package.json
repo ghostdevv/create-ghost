@@ -21,7 +21,7 @@
 		"url": "https://github.com/ghostdevv/create-ghost/issues"
 	},
 	"scripts": {
-		"update-templates": "taze --cwd files/templates --recursive --write",
+		"update-templates": "tsx scripts/update-templates.ts",
 		"check": "tsc --noEmit && biome check . && prettier --check .",
 		"fix": "biome check . --fix && prettier --write .",
 		"release": "changelogen --release",
@@ -36,10 +36,12 @@
 	"devDependencies": {
 		"@biomejs/biome": "2.3.15",
 		"@types/node": "^20.17.19",
+		"actions-up": "^1.14.2",
 		"changelogen": "^0.6.2",
 		"prettier": "^3.8.1",
 		"taze": "^19.9.2",
 		"tsdown": "^0.20.3",
+		"tsx": "^4.22.3",
 		"typescript": "^5.9.3"
 	},
 	"packageManager": "pnpm@10.21.0",

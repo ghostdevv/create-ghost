@@ -1,8 +1,8 @@
 import { confirm, log, multiselect, taskLog } from '@clack/prompts';
 import { handleCancel } from './prompts';
 import { existsSync } from 'node:fs';
-import { exec } from 'tinyexec';
 import { join } from 'node:path';
+import { exec } from 'tinyexec';
 
 export interface Dependency {
 	specifier: string;
@@ -34,18 +34,23 @@ interface CommandOptions {
 	args: string[];
 	title: string;
 	cwd: string;
+	log?: boolean;
 }
 
 // Based on MIT Licensed code from Svelte CLI Contributors
 // https://github.com/sveltejs/cli/blob/9cbf5199c30618d53573c3de8fe08f031f60a125/LICENSE
 // https://github.com/sveltejs/cli/blob/9cbf5199c30618d53573c3de8fe08f031f60a125/packages/sv/src/core/package-manager.ts#L52-L79
-async function runCommand(options: CommandOptions) {
-	log.info(`${options.command} ${options.args.join(' ')}`);
+export async function runCommand(options: CommandOptions) {
+	options.log ??= true;
+
+	if (options.log) {
+		log.info(`${options.command} ${options.args.join(' ')}`);
+	}
 
 	const task = taskLog({
 		limit: Math.ceil(process.stdout.rows / 2),
 		title: options.title,
-		retainLog: true,
+		retainLog: options.log,
 		spacing: 0,
 	});
 
