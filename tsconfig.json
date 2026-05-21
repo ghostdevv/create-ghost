@@ -10,7 +10,8 @@
 		"moduleResolution": "bundler",
 		"module": "ESNext",
 		"target": "ESNext",
-		"verbatimModuleSyntax": true
+		"verbatimModuleSyntax": true,
+		"types": ["node"]
 	},
 	"include": ["src/**/*.ts"],
 	"exclude": ["node_modules/**"]
