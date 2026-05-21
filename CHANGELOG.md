@@ -1,5 +1,22 @@
 # Changelog
 
+## v1.29.0
+
+[compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.28.1...v1.29.0)
+
+### 🚀 Enhancements
+
+- Update template pnpm and node versions ([a579a86](https://github.com/ghostdevv/create-ghost/commit/a579a86))
+- Update template/bp deps fully ([0faa955](https://github.com/ghostdevv/create-ghost/commit/0faa955))
+
+### 🏡 Chore
+
+- Add a proper updater script ([7f43f42](https://github.com/ghostdevv/create-ghost/commit/7f43f42))
+
+### ❤️ Contributors
+
+- Willow (GHOST) <git@willow.sh>
+
 ## v1.28.1
 
 [compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.28.0...v1.28.1)
