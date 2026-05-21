@@ -2,11 +2,11 @@
 import { version } from '../package.json' with { type: 'json' };
 import { checkForUpdate } from './utils/version.js';
 import { intro, outro } from '@clack/prompts';
+import { styleText } from 'node:util';
 import sade from 'sade';
 
 import { run as boilerplateCommand } from './commands/bp.js';
 import { run as createCommand } from './commands/create.js';
-import { styleText } from 'node:util';
 
 const program = sade('create-ghost');
 

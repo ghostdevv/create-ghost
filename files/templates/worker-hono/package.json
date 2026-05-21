@@ -7,14 +7,12 @@
 		"prepare": "wrangler types"
 	},
 	"devDependencies": {
-		"hono": "^4.11.9",
-		"wrangler": "^4.65.0"
+		"hono": "^4.12.21",
+		"wrangler": "^4.93.0"
 	},
-	"pnpm": {
-		"onlyBuiltDependencies": [
-			"esbuild",
-			"sharp",
-			"workerd"
-		]
+	"packageManager": "pnpm@11.2.1",
+	"volta": {
+		"node": "24.15.0",
+		"pnpm": "11.2.1"
 	}
 }

@@ -7,9 +7,9 @@ import { multiselect, log } from '@clack/prompts';
 import { FILES_DIR } from '../utils/vars.js';
 import { pathToFileURL } from 'node:url';
 import { copy } from '../utils/copy.js';
+import { styleText } from 'node:util';
 import type { Handler } from 'sade';
 import { exec } from 'tinyexec';
-import { styleText } from 'node:util';
 
 interface BpItemMeta {
 	name: string;

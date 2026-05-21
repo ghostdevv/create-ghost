@@ -8,13 +8,11 @@
 	},
 	"devDependencies": {
 		"typescript": "^5.9.3",
-		"wrangler": "^4.65.0"
+		"wrangler": "^4.93.0"
 	},
-	"pnpm": {
-		"onlyBuiltDependencies": [
-			"esbuild",
-			"sharp",
-			"workerd"
-		]
+	"packageManager": "pnpm@11.2.1",
+	"volta": {
+		"node": "24.15.0",
+		"pnpm": "11.2.1"
 	}
 }

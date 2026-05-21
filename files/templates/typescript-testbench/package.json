@@ -6,12 +6,12 @@
 		"dev": "tsx --watch src/index.ts"
 	},
 	"devDependencies": {
-		"tsx": "^4.21.0",
+		"tsx": "^4.22.3",
 		"typescript": "^5.9.3"
 	},
-	"pnpm": {
-		"onlyBuiltDependencies": [
-			"esbuild"
-		]
+	"packageManager": "pnpm@11.2.1",
+	"volta": {
+		"node": "24.15.0",
+		"pnpm": "11.2.1"
 	}
 }
