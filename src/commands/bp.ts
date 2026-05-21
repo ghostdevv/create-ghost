@@ -8,8 +8,8 @@ import { FILES_DIR } from '../utils/vars.js';
 import { pathToFileURL } from 'node:url';
 import { copy } from '../utils/copy.js';
 import type { Handler } from 'sade';
-import pc from 'picocolors';
 import { exec } from 'tinyexec';
+import pc from 'picocolors';
 
 interface BpItemMeta {
 	name: string;
