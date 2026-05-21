@@ -5,8 +5,8 @@ import { select, text, group, log } from '@clack/prompts';
 import { FILES_DIR } from '../utils/vars.js';
 import { join, resolve } from 'node:path';
 import { copy } from '../utils/copy.js';
+import { styleText } from 'node:util';
 import type { Handler } from 'sade';
-import pc from 'picocolors';
 
 async function loadTemplates() {
 	const path = join(FILES_DIR, './templates');
@@ -58,5 +58,5 @@ export const run: Handler = async ({ force }) => {
 
 	await installDependencies(outPath);
 
-	log.success(`Created a folder called ${pc.gray(out)}`);
+	log.success(`Created a folder called ${styleText('grey', out)}`);
 };

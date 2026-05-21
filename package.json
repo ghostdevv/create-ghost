@@ -7,8 +7,7 @@
 		"LICENSE"
 	],
 	"bin": {
-		"create-ghost": "./dist/bin.mjs",
-		"ghost": "./dist/bin.mjs"
+		"create-ghost": "./dist/bin.mjs"
 	},
 	"repository": {
 		"type": "git",
@@ -29,13 +28,12 @@
 	},
 	"dependencies": {
 		"@clack/prompts": "^1.4.0",
-		"picocolors": "^1.1.1",
 		"sade": "^1.8.1",
 		"tinyexec": "^1.1.2"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.4.15",
-		"@types/node": "^20.19.41",
+		"@types/node": "^22.13.17",
 		"actions-up": "^1.14.2",
 		"changelogen": "^0.6.2",
 		"prettier": "^3.8.3",
@@ -44,12 +42,12 @@
 		"tsx": "^4.22.3",
 		"typescript": "^6.0.3"
 	},
-	"packageManager": "pnpm@10.21.0",
+	"packageManager": "pnpm@11.0.9",
 	"volta": {
-		"node": "20.19.0",
-		"pnpm": "10.21.0"
+		"node": "22.13.0",
+		"pnpm": "11.0.9"
 	},
 	"engines": {
-		"node": "^24.0.0||^22.8.0||^20.19.0"
+		"node": "^26.0.0||^24.0.0||^22.13.0"
 	}
 }

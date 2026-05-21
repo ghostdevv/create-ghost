@@ -7,8 +7,8 @@ import { multiselect, log } from '@clack/prompts';
 import { FILES_DIR } from '../utils/vars.js';
 import { pathToFileURL } from 'node:url';
 import { copy } from '../utils/copy.js';
+import { styleText } from 'node:util';
 import type { Handler } from 'sade';
-import pc from 'picocolors';
 import { exec } from 'tinyexec';
 
 interface BpItemMeta {
@@ -112,5 +112,5 @@ export const run: Handler = async ({ force }) => {
 		await addDependencies(process.cwd(), Array.from(deps.values()), true);
 	}
 
-	log.success(pc.green('Done'));
+	log.success(styleText('green', 'Done'));
 };
