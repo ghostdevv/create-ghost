@@ -1,5 +1,18 @@
 # Changelog
 
+## v1.30.0
+
+[compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.29.0...v1.30.0)
+
+### 🚀 Enhancements
+
+- Disable package manager cache for release ([7fa1205](https://github.com/ghostdevv/create-ghost/commit/7fa1205))
+- Use staged publishing ([9e237a5](https://github.com/ghostdevv/create-ghost/commit/9e237a5))
+
+### ❤️ Contributors
+
+- Willow (GHOST) <git@willow.sh>
+
 ## v1.29.0
 
 [compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.28.1...v1.29.0)
