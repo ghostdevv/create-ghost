@@ -7,7 +7,8 @@
 		"verbatimModuleSyntax": true,
 		"allowJs": true,
 		"checkJs": true,
-		"resolveJsonModule": true
+		"resolveJsonModule": true,
+		"types": ["node"]
 	},
 	"include": ["src/**.ts", "src/**.js"],
 	"exclude": ["node_modules/**"]

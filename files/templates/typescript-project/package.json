@@ -12,7 +12,7 @@
 	"devDependencies": {
 		"@e18e/eslint-plugin": "0.2.0",
 		"@rlly/pedantic": "0.2.0",
-		"@types/node": "25.9.1",
+		"@types/node": "24.12.4",
 		"oxlint": "1.66.0",
 		"oxlint-tsgolint": "0.15.0",
 		"prettier": "3.8.3",
