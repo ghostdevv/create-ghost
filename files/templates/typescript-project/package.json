@@ -10,12 +10,12 @@
 		"dev": "tsx src/index.ts"
 	},
 	"devDependencies": {
-		"@e18e/eslint-plugin": "^0.2.0",
+		"@e18e/eslint-plugin": "0.2.0",
 		"@rlly/pedantic": "0.2.0",
 		"@types/node": "25.9.1",
-		"oxlint": "^1.66.0",
-		"oxlint-tsgolint": "^0.15.0",
-		"prettier": "^3.8.3",
+		"oxlint": "1.66.0",
+		"oxlint-tsgolint": "0.15.0",
+		"prettier": "3.8.3",
 		"tsx": "latest",
 		"typescript": "5.9.3"
 	},
