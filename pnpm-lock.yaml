@@ -34,7 +34,7 @@ importers:
         specifier: 0.6.2
         version: 0.6.2
       prettier:
-        specifier: ^3.8.3
+        specifier: 3.8.3
         version: 3.8.3
       taze:
         specifier: 19.13.0

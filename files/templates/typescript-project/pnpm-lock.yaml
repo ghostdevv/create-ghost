@@ -9,7 +9,7 @@ importers:
   .:
     devDependencies:
       '@e18e/eslint-plugin':
-        specifier: ^0.2.0
+        specifier: 0.2.0
         version: 0.2.0(oxlint@1.66.0(oxlint-tsgolint@0.15.0))
       '@rlly/pedantic':
         specifier: 0.2.0
@@ -18,13 +18,13 @@ importers:
         specifier: 25.9.1
         version: 25.9.1
       oxlint:
-        specifier: ^1.66.0
+        specifier: 1.66.0
         version: 1.66.0(oxlint-tsgolint@0.15.0)
       oxlint-tsgolint:
-        specifier: ^0.15.0
+        specifier: 0.15.0
         version: 0.15.0
       prettier:
-        specifier: ^3.8.3
+        specifier: 3.8.3
         version: 3.8.3
       tsx:
         specifier: latest
