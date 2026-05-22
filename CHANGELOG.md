@@ -1,5 +1,21 @@
 # Changelog
 
+## v1.31.0
+
+[compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.30.1...v1.31.0)
+
+### 🚀 Enhancements
+
+- Add renovate configs ([0fbe9dc](https://github.com/ghostdevv/create-ghost/commit/0fbe9dc))
+
+### 🩹 Fixes
+
+- Personal rennovate config ([fb30f28](https://github.com/ghostdevv/create-ghost/commit/fb30f28))
+
+### ❤️ Contributors
+
+- Willow (GHOST) <git@willow.sh>
+
 ## v1.30.1
 
 [compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.30.0...v1.30.1)
