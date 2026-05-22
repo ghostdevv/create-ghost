@@ -25,28 +25,28 @@ importers:
         specifier: 2.4.15
         version: 2.4.15
       '@types/node':
-        specifier: ^20.19.41
+        specifier: 20.19.41
         version: 20.19.41
       actions-up:
-        specifier: ^1.14.2
+        specifier: 1.14.2
         version: 1.14.2
       changelogen:
-        specifier: ^0.6.2
+        specifier: 0.6.2
         version: 0.6.2
       prettier:
         specifier: ^3.8.3
         version: 3.8.3
       taze:
-        specifier: ^19.13.0
+        specifier: 19.13.0
         version: 19.13.0
       tsdown:
-        specifier: ^0.22.0
+        specifier: 0.22.0
         version: 0.22.0(tsx@4.22.3)(typescript@6.0.3)(unrun@0.2.27(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0))
       tsx:
-        specifier: ^4.22.3
+        specifier: 4.22.3
         version: 4.22.3
       typescript:
-        specifier: ^6.0.3
+        specifier: 6.0.3
         version: 6.0.3
 
 packages:
@@ -1263,7 +1263,7 @@ snapshots:
 
   ast-kit@3.0.0-beta.1:
     dependencies:
-      '@babel/parser': 8.0.0-rc.4
+      '@babel/parser': 8.0.0-rc.5
       estree-walker: 3.0.3
       pathe: 2.0.3
 
