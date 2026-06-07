@@ -1,6 +1,7 @@
 {
 	"name": "@somescope/monorepo",
 	"private": true,
+	"type": "module",
 	"license": "MIT",
 	"devDependencies": {
 		"@changesets/cli": "2.31.0",
