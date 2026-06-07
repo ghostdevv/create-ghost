@@ -8,6 +8,7 @@
 		"allowJs": true,
 		"checkJs": true,
 		"resolveJsonModule": true,
+		"skipLibCheck": true,
 		"types": []
 	},
 	"include": ["src/**.ts", "src/**.js", "worker-configuration.d.ts"],
