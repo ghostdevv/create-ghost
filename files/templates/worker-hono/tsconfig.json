@@ -9,7 +9,8 @@
 		"checkJs": true,
 		"resolveJsonModule": true,
 		"skipLibCheck": true,
-		"types": []
+		"types": ["./worker-configuration.d.ts"],
+		"lib": ["esnext"]
 	},
 	"include": ["src/**.ts", "src/**.js", "worker-configuration.d.ts"],
 	"exclude": ["node_modules/**"]
