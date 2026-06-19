@@ -25,8 +25,8 @@ importers:
         specifier: 2.4.15
         version: 2.4.15
       '@types/node':
-        specifier: 20.19.41
-        version: 20.19.41
+        specifier: 20.19.43
+        version: 20.19.43
       actions-up:
         specifier: 1.14.2
         version: 1.14.2
@@ -534,8 +534,8 @@ packages:
   '@types/jsesc@2.5.1':
     resolution: {integrity: sha512-9VN+6yxLOPLOav+7PwjZbxiID2bVaeq0ED4qSQmdQTdjnXJSaCVKTR58t15oqH1H5t8Ng2ZX1SabJVoN9Q34bw==}
 
-  '@types/node@20.19.41':
-    resolution: {integrity: sha512-ECymXOukMnOoVkC2bb1Vc/w/836DXncOg5m8Xj1RH7xSHZJWNYY6Zh7EH477vcnD5egKNNfy2RpNOmuChhFPgQ==}
+  '@types/node@20.19.43':
+    resolution: {integrity: sha512-6oYBAi5ikg4Pl+kGsoYtawUMBT2zZMCvPNF7pVLnHZfd1zf38DRiWn/gT01RYCdUqkv7Fhr+C9ot4/tb+2sVvA==}
 
   actions-up@1.14.2:
     resolution: {integrity: sha512-yQHZAU4UkWegGY2vmgg1TYAoKQDFPX5NUAI57P0BXhgB6wDGBNVhgBuXUkid8mxVviF8OMVr4yxMvax2nnY0Cw==}
@@ -1256,7 +1256,7 @@ snapshots:
 
   '@types/jsesc@2.5.1': {}
 
-  '@types/node@20.19.41':
+  '@types/node@20.19.43':
     dependencies:
       undici-types: 6.21.0
 
