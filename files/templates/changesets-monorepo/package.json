@@ -19,9 +19,9 @@
 	"bugs": {
 		"url": "https://github.com/REPO_NAME"
 	},
-	"packageManager": "pnpm@11.3.0",
+	"packageManager": "pnpm@11.9.0",
 	"volta": {
 		"node": "24.15.0",
-		"pnpm": "11.3.0"
+		"pnpm": "11.9.0"
 	}
 }
