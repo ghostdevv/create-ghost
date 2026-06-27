@@ -34,11 +34,11 @@
 		"tinyexec": "^1.1.2"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.4.15",
+		"@biomejs/biome": "2.5.1",
 		"@types/node": "20.19.41",
 		"actions-up": "1.14.2",
 		"changelogen": "0.6.2",
-		"prettier": "3.8.3",
+		"prettier": "3.8.4",
 		"taze": "19.14.1",
 		"tsdown": "0.22.1",
 		"tsx": "4.22.4",
