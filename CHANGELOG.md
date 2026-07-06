@@ -1,5 +1,35 @@
 # Changelog
 
+## v1.32.0
+
+[compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.31.0...v1.32.0)
+
+### 🚀 Enhancements
+
+- Update typescript to v6 in testbench/project ([#31](https://github.com/ghostdevv/create-ghost/pull/31))
+- Update wrangler and hono in templates ([25187f4](https://github.com/ghostdevv/create-ghost/commit/25187f4))
+- Lint action improvements ([dcf96cf](https://github.com/ghostdevv/create-ghost/commit/dcf96cf))
+- Switch worker templates to use jsonc wrangler configs ([3835244](https://github.com/ghostdevv/create-ghost/commit/3835244))
+
+### 🩹 Fixes
+
+- Set @types/node correctly for typescript testbench/project templates ([76c2934](https://github.com/ghostdevv/create-ghost/commit/76c2934))
+- Enable skip lib check in tsconfigs ([ff1b091](https://github.com/ghostdevv/create-ghost/commit/ff1b091))
+- Update worker tsconfigs to include correct types/lib ([c95e611](https://github.com/ghostdevv/create-ghost/commit/c95e611))
+- Update worker tsconfigs to have correct include/excludes ([f4b120d](https://github.com/ghostdevv/create-ghost/commit/f4b120d))
+- Add missing type: module ([4457203](https://github.com/ghostdevv/create-ghost/commit/4457203))
+- Add json schema to worker config files ([8fede23](https://github.com/ghostdevv/create-ghost/commit/8fede23))
+- Worker templates name ([184fa85](https://github.com/ghostdevv/create-ghost/commit/184fa85))
+
+### 🏡 Chore
+
+- Remove extra lock ([3402aef](https://github.com/ghostdevv/create-ghost/commit/3402aef))
+- Update renovate ([5a38ad0](https://github.com/ghostdevv/create-ghost/commit/5a38ad0))
+
+### ❤️ Contributors
+
+- Willow (GHOST) <git@willow.sh>
+
 ## v1.31.0
 
 [compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.30.1...v1.31.0)
