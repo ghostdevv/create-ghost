@@ -17,6 +17,6 @@
 		"lint": "publint"
 	},
 	"devDependencies": {
-		"publint": "0.3.21"
+		"publint": "0.3.23"
 	}
 }
