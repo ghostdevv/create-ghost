@@ -9,7 +9,7 @@
 	},
 	"devDependencies": {
 		"hono": "4.12.27",
-		"wrangler": "4.97.0"
+		"wrangler": "4.118.0"
 	},
 	"packageManager": "pnpm@11.3.0",
 	"volta": {
