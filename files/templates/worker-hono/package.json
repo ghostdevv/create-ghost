@@ -8,8 +8,8 @@
 		"prepare": "wrangler types"
 	},
 	"devDependencies": {
-		"hono": "4.12.27",
-		"wrangler": "4.97.0"
+		"hono": "4.13.9",
+		"wrangler": "4.141.0"
 	},
 	"packageManager": "pnpm@12.6.0",
 	"volta": {
