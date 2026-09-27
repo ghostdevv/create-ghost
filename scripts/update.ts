@@ -1,10 +1,10 @@
-import { runCommand } from '../src/utils/dependencies.ts';
-import { isAbsolute, join } from 'node:path';
-import { intro, log, outro } from '@clack/prompts';
 import { readdir, readFile, writeFile } from 'node:fs/promises';
+import { runCommand } from '../src/utils/dependencies';
+import { intro, log, outro } from '@clack/prompts';
+import { isAbsolute, join } from 'node:path';
+import { styleText } from 'node:util';
 import { existsSync } from 'node:fs';
 import { exec } from 'tinyexec';
-import { styleText } from 'node:util';
 
 const TEMPLATES_DIR = join(import.meta.dirname, '../files/templates');
 const ITEMS_DIR = join(import.meta.dirname, '../files/items');
