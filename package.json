@@ -21,7 +21,7 @@
 		"url": "https://github.com/ghostdevv/create-ghost/issues"
 	},
 	"scripts": {
-		"update-templates": "tsx scripts/update-templates.ts",
+		"update-templates": "tsx scripts/update.ts",
 		"check": "tsc --noEmit && biome check . && prettier --check .",
 		"fix": "biome check . --fix && prettier --write .",
 		"release": "changelogen --release",
