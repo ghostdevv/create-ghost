@@ -1,5 +1,22 @@
 # Changelog
 
+## v1.33.0
+
+[compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.32.0...v1.33.0)
+
+### 🚀 Enhancements
+
+- Switch typescript-project template to use node strip types ([db49897](https://github.com/ghostdevv/create-ghost/commit/db49897))
+
+### 🏡 Chore
+
+- Fmt ([de7d922](https://github.com/ghostdevv/create-ghost/commit/de7d922))
+- Fix update-templates location and tsconfig ([ebad5e4](https://github.com/ghostdevv/create-ghost/commit/ebad5e4))
+
+### ❤️ Contributors
+
+- Willow (GHOST) <git@willow.sh>
+
 ## v1.32.0
 
 [compare changes](https://github.com/ghostdevv/create-ghost/compare/v1.31.0...v1.32.0)
