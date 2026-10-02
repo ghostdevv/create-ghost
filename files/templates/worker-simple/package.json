@@ -11,9 +11,9 @@
 		"typescript": "6.0.3",
 		"wrangler": "4.141.0"
 	},
-	"packageManager": "pnpm@12.6.0",
+	"packageManager": "pnpm@12.8.1",
 	"volta": {
 		"node": "26.10.0",
-		"pnpm": "12.6.0"
+		"pnpm": "12.8.1"
 	}
 }
