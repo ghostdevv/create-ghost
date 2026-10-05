@@ -16,7 +16,7 @@
 		"oxlint": "1.85.0",
 		"oxlint-tsgolint": "0.23.0",
 		"prettier": "3.9.9",
-		"typescript": "6.0.3"
+		"typescript": "7.0.2"
 	},
 	"packageManager": "pnpm@12.6.0",
 	"volta": {
