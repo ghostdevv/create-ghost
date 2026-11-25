@@ -42,7 +42,7 @@
 		"taze": "21.1.0",
 		"tsdown": "0.23.0",
 		"tsx": "4.23.15",
-		"typescript": "6.0.3"
+		"typescript": "7.0.2"
 	},
 	"packageManager": "pnpm@10.33.4",
 	"volta": {
